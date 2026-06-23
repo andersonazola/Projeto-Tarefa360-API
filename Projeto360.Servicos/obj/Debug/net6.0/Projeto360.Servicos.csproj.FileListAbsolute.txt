@@ -1,0 +1,30 @@
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Servicos.deps.json
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Servicos.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Servicos.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.AssemblyInfoInputs.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.AssemblyInfo.cs
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.csproj.CoreCompileInputs.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\refint\Projeto360.Servicos.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\ref\Projeto360.Servicos.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Servicos.deps.json
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Servicos.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Servicos.pdb
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Dominio.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Dominio.pdb
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.csproj.AssemblyReference.cache
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.AssemblyInfoInputs.cache
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.AssemblyInfo.cs
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.csproj.CoreCompileInputs.cache
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto3.698C1807.Up2Date
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\refint\Projeto360.Servicos.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.pdb
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\ref\Projeto360.Servicos.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Dominio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\bin\Debug\net6.0\Projeto360.Dominio.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto360.Servicos.csproj.AssemblyReference.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Servicos\obj\Debug\net6.0\Projeto3.698C1807.Up2Date

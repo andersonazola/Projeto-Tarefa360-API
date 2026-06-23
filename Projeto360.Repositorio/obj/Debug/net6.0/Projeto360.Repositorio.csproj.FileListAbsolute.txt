@@ -1,0 +1,68 @@
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.deps.json
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.runtimeconfig.json
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.dll
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.pdb
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.AssemblyReference.cache
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfoInputs.cache
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfo.cs
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto3.3DC9F0D7.Up2Date
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\refint\Projeto360.Repositorio.dll
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.genruntimeconfig.cache
+C:\Users\Noite\Desktop\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\ref\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.deps.json
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.runtimeconfig.json
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.AssemblyReference.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfoInputs.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfo.cs
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto3.3DC9F0D7.Up2Date
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\refint\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.genruntimeconfig.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\ref\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.deps.json
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.runtimeconfig.json
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.AssemblyReference.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfoInputs.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfo.cs
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto3.3DC9F0D7.Up2Date
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\refint\Projeto360.Repositorio.dll
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.genruntimeconfig.cache
+C:\Users\Anderson azola\OneDrive\Documentos\Estudos\Itera 360\Anderson\Anderson\Arquitetura e Soluções\Arquitetura e Soluções\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\ref\Projeto360.Repositorio.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.deps.json
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.runtimeconfig.json
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\bin\Debug\net6.0\Projeto360.Dominio.pdb
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.AssemblyReference.cache
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfoInputs.cache
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.AssemblyInfo.cs
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto3.3DC9F0D7.Up2Date
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\refint\Projeto360.Repositorio.dll
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.pdb
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\Projeto360.Repositorio.genruntimeconfig.cache
+C:\Users\Noite\Desktop\Anderson\Projetos\Projeto360\Projeto360.Repositorio\obj\Debug\net6.0\ref\Projeto360.Repositorio.dll

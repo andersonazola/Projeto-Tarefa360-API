@@ -1,0 +1,363 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\Projeto360.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\Projeto360.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\Projeto360.Api.csproj",
+        "projectName": "Projeto360.Api",
+        "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\Projeto360.Api.csproj",
+        "packagesPath": "C:\\Users\\Anderson azola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Anderson azola\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj"
+              },
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj"
+              },
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj",
+        "projectName": "Projeto360.Aplicacao",
+        "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj",
+        "packagesPath": "C:\\Users\\Anderson azola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Anderson azola\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj"
+              },
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj"
+              },
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Servicos\\Projeto360.Servicos.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Servicos\\Projeto360.Servicos.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj",
+        "projectName": "Projeto360.Dominio",
+        "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj",
+        "packagesPath": "C:\\Users\\Anderson azola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Anderson azola\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj",
+        "projectName": "Projeto360.Repositorio",
+        "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj",
+        "packagesPath": "C:\\Users\\Anderson azola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Anderson azola\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Servicos\\Projeto360.Servicos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Servicos\\Projeto360.Servicos.csproj",
+        "projectName": "Projeto360.Servicos",
+        "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Servicos\\Projeto360.Servicos.csproj",
+        "packagesPath": "C:\\Users\\Anderson azola\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Servicos\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Anderson azola\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "NewtonSoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
