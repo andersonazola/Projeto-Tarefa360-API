@@ -17,15 +17,4 @@ O projeto foi construído utilizando as seguintes tecnologias e práticas:
 * **Entity Framework Core / Dapper** — Para persistência e manipulação de dados.
 * **SQL Server / Docker** — Banco de dados e containerização.
 
-## 🚀 Como Executar o Projeto
 
-### Pré-requisitos
-Antes de começar, você vai precisar ter instalado em sua máquina:
-* [SDK do .NET](https://dotnet.microsoft.com/download) (Versão utilizada no projeto)
-* Uma IDE como [Visual Studio](https://visualstudio.microsoft.com/) ou [VS Code](https://code.visualstudio.com/)
-
-### Passo a Passo
-
-1. **Clone o repositório:**
-```bash
-   git clone [https://github.com/andersonazola/Arquitetura_E_Solucoes.git](https://github.com/andersonazola/Arquitetura_E_Solucoes.git)
