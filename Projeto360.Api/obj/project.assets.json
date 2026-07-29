@@ -1697,38 +1697,40 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anderson azola\\.nuget\\packages\\": {}
+    "C:\\Users\\Noite\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\Projeto360.Api.csproj",
+      "projectUniqueName": "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Api\\Projeto360.Api.csproj",
       "projectName": "Projeto360.Api",
-      "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\Projeto360.Api.csproj",
-      "packagesPath": "C:\\Users\\Anderson azola\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Api\\obj\\",
+      "projectPath": "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Api\\Projeto360.Api.csproj",
+      "packagesPath": "C:\\Users\\Noite\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Anderson azola\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Noite\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj": {
-              "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj"
+            "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj": {
+              "projectPath": "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Aplicacao\\Projeto360.Aplicacao.csproj"
             },
-            "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj": {
-              "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Dominio\\Projeto360.Dominio.csproj"
+            "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Dominio\\Projeto360.Dominio.csproj": {
+              "projectPath": "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Dominio\\Projeto360.Dominio.csproj"
             },
-            "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj": {
-              "projectPath": "C:\\Users\\Anderson azola\\OneDrive\\Documentos\\Estudos\\Itera 360\\Anderson\\Anderson\\Arquitetura e Soluções\\Arquitetura e Soluções\\Projetos\\Projeto360\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj"
+            "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj": {
+              "projectPath": "C:\\Users\\Noite\\Desktop\\Anderson\\Projeto-Tarefa360-API\\Projeto360.Repositorio\\Projeto360.Repositorio.csproj"
             }
           }
         }
@@ -1772,7 +1774,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

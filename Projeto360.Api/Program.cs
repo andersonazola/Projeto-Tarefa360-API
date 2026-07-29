@@ -2,6 +2,7 @@
 
 using DataAccess.Repositorio;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Projeto360.Aplicacao;
 using Projeto360.Servicos.Interfaces;
 
@@ -16,6 +17,18 @@ builder.Services.AddScoped<ITarefaAplicacao, TarefaAplicacao>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
 // Adicione os serviços
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://localhost:3000")
+        .SetIsOriginAllowedToAllowWildcardSubdomains()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 
 builder.Services.AddScoped<IJsonPlaceHolderServico, JsonPlaceHolderServico>();
 
@@ -36,6 +49,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors();
 }
 
 app.UseHttpsRedirection();
