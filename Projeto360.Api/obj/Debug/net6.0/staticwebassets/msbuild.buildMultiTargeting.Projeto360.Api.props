@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Projeto360.Api.props" />
-</Project>
