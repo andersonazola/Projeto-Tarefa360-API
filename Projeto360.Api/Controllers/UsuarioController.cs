@@ -82,7 +82,7 @@ public class UsuarioController : ControllerBase
                 Nome = usuario.Nome,
                 Email = usuario.Email
             };
-           await _usuarioAplicacao.Atualizar(usuarioDominio);
+            await _usuarioAplicacao.Atualizar(usuarioDominio);
 
             return Ok();
         }
@@ -119,7 +119,7 @@ public class UsuarioController : ControllerBase
     {
         try
         {
-           await _usuarioAplicacao.Deletar(usuarioId);
+            await _usuarioAplicacao.Deletar(usuarioId);
 
             return Ok();
         }
@@ -135,7 +135,7 @@ public class UsuarioController : ControllerBase
     {
         try
         {
-           await _usuarioAplicacao.Restaurar(usuarioId);
+            await _usuarioAplicacao.Restaurar(usuarioId);
 
             return Ok();
         }
@@ -178,11 +178,15 @@ public class UsuarioController : ControllerBase
             var tipoUsuarios = (string[])Enum.GetNames(typeof(TiposUsuarios));
             var valorUsuarios = (int[])Enum.GetValues(typeof(TiposUsuarios));
 
-            List<string> resposta = new List<string>();
+            var resposta = new List<object>();
 
-            for (var cont = 0; cont <= 2; cont++)
+            for (var cont = 0; cont < tipoUsuarios.Length; cont++)
             {
-                resposta.Add($"ID = {valorUsuarios[cont]}, Nome: = {tipoUsuarios[cont]}");
+                resposta.Add(new
+                {
+                    id = valorUsuarios[cont],
+                    nome = tipoUsuarios[cont]
+                });
             }
 
             return Ok(resposta);
