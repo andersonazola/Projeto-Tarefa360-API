@@ -1,0 +1,47 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Xx]64/
+[Xx]86/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Rider
+.idea/
+
+# appsettings sensíveis (mantenha um appsettings.Development.json.example versionado, se necessário)
+appsettings.Development.json
+appsettings.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# Testes
+TestResults/
+*.trx
+
+# Publicação
+*.publishsettings
+PublishProfiles/
