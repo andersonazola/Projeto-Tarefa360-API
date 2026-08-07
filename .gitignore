@@ -32,7 +32,7 @@ ScaffoldingReadMe.txt
 
 # appsettings sensíveis (mantenha um appsettings.Development.json.example versionado, se necessário)
 appsettings.Development.json
-appsettings.json
+
 
 # OS / editor
 .DS_Store
