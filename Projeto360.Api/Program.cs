@@ -13,6 +13,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IUsuarioAplicacao, UsuarioAplicacao>();
 builder.Services.AddScoped<ITarefaAplicacao, TarefaAplicacao>();
 
+
 // Adicione as interfaces de banco de dados
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
@@ -35,7 +36,7 @@ builder.Services.AddScoped<IJsonPlaceHolderServico, JsonPlaceHolderServico>();
 builder.Services.AddControllers();
 
 // Adicionar o serviço de banco de dados
-builder.Services.AddDbContext<Projeto360Contexto>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<Projeto360Contexto>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("projetoDB")));
 
 
 // Saiba mais sobre a configuracão do Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
