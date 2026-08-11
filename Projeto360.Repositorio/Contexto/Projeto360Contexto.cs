@@ -7,6 +7,7 @@ public class Projeto360Contexto : DbContext
 {
     private readonly DbContextOptions _options;
     public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Projeto> Projetos { get; set; }
     
     // public Projeto360Contexto() { }
     public Projeto360Contexto(DbContextOptions options) : base(options) { }
@@ -15,10 +16,8 @@ public class Projeto360Contexto : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new UsuarioConfiguracoes());
+        modelBuilder.ApplyConfiguration(new ProjetoConfiguracoes());
         
     }
-
-
-
 
 }
