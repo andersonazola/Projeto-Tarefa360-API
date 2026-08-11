@@ -11,7 +11,7 @@ namespace Projeto360.Aplicacao.Interfaces
     {
         Task <int> Criar(Projeto projeto);
         Task Atualizar (Projeto projeto);
-        Task Deletar (Projeto projeto);
+        Task Deletar (int projetoId);
         Task<Projeto> Obter(int projetoId);
         Task<IEnumerable<Projeto>> Listar (bool ativo = true);
     }

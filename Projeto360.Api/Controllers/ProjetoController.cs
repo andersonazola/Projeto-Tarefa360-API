@@ -32,7 +32,7 @@ namespace Projeto360.Api.Controllers
         }
 
         [HttpGet("Listar")]
-        public async Task<ActionResult Listar()
+        public async Task<ActionResult> Listar()
         {
             try
             {
