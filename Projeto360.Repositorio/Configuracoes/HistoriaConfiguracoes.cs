@@ -12,8 +12,7 @@ public class HistoriaConfiguracoes : IEntityTypeConfiguration<Historia>
         builder.ToTable("Historias").HasKey(historia => historia.Id);
 
         builder.Property(historia => historia.Id).HasColumnName("HistoriaId").IsRequired(true);
-        builder.Property(historia => historia.Nome).HasColumnName("Nome").IsRequired(true).HasMaxLength(100);
-        builder.Property(historia => historia.Projeto).HasColumnName("Projeto").IsRequired(true);
+        builder.Property(historia => historia.Nome).HasColumnName("Nome").IsRequired(true).HasMaxLength(100);        
         builder.Property(historia => historia.ProjetoId).HasColumnName("ProjetoId").IsRequired(true);
         builder.Property(historia => historia.Descricao).HasColumnName("Descricao").IsRequired(false).HasMaxLength(500);
         builder.Property(historia => historia.Ativo).HasColumnName("Ativo").IsRequired(true);
