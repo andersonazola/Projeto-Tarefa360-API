@@ -1,7 +1,7 @@
 using Projeto360.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAccess.Repositorio;
+namespace Projeto360.Repositorio;
 
 public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
 {
