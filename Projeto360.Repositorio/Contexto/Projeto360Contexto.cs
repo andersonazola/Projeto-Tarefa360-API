@@ -10,6 +10,7 @@ public class Projeto360Contexto : DbContext
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Projeto> Projetos { get; set; }
     public DbSet<Historia> Historias { get; set; }
+    public DbSet<Sprint> Sprints {get; set;}
     
     // public Projeto360Contexto() { }
     public Projeto360Contexto(DbContextOptions options) : base(options) { }
@@ -20,6 +21,7 @@ public class Projeto360Contexto : DbContext
         modelBuilder.ApplyConfiguration(new UsuarioConfiguracoes());
         modelBuilder.ApplyConfiguration(new ProjetoConfiguracoes());
         modelBuilder.ApplyConfiguration(new HistoriaConfiguracoes());
+        modelBuilder.ApplyConfiguration(new SprintConfiguracoes());
         
     }
 
