@@ -1,9 +1,9 @@
-
-
-using DataAccess.Repositorio;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Projeto360.Aplicacao;
+using Projeto360.Aplicacao.Interfaces;
+using Projeto360.Repositorio;
+using Projeto360.Repositorio.Interfaces;
 using Projeto360.Servicos.Interfaces;
 
 
@@ -12,10 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Adicione serviços ao contêiner
 builder.Services.AddScoped<IUsuarioAplicacao, UsuarioAplicacao>();
 builder.Services.AddScoped<ITarefaAplicacao, TarefaAplicacao>();
+builder.Services.AddScoped<IProjetoAplicacao, ProjetoAplicacao>();
+builder.Services.AddScoped<IHistoriaAplicacao, HistoriaAplicacao>();
 
 
 // Adicione as interfaces de banco de dados
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
+builder.Services.AddScoped<IHistoriaRepositorio, HistoriaRepositorio>();
 
 // Adicione os serviços
 

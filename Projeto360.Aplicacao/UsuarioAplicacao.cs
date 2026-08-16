@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Projeto360.Dominio.Entidades;
 
-
 namespace Projeto360.Aplicacao;
 
 public class UsuarioAplicacao : IUsuarioAplicacao

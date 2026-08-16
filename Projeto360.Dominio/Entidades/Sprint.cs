@@ -1,10 +1,9 @@
-using System.ComponentModel.DataAnnotations;
-
+using Projeto360.Entidades;
 namespace Projeto360.Dominio.Entidades;
 
 public class Sprint 
 {
-    public int ID {get; set;}
+    public int Id {get; set;}
 
     public string Nome { get; set; }
 
@@ -12,6 +11,19 @@ public class Sprint
 
     public DateTime DataFim {get; set;}
 
+    public List <Projeto> Projetos {get; set;}
 
-//REFAZER O DOMINIO COM A SARA MERGEANDO A BRANCH DELA POR CONTA QUE O PROJETOS É PUXADO DE LA
+    public Projeto Projeto {get; set;}
+    
+    public int ProjetoId {get; set;}
+
+    public void Validar()
+    {
+       
+        if (DataFim < DataInicio)
+        {
+            throw new ArgumentException ("Erro");
+        }
+    }
+
 }
