@@ -32,4 +32,11 @@ public class Tarefa
         Concluida = false;
 
     }
+
+    public void validarNome()
+    {
+        if (string.IsNullOrWhiteSpace(Nome) || Nome.Length < 3 || Nome.Length > 100)
+            throw new ArgumentException("Nom deve ter entre 3 a 100 caracteres");
+
+    }
 }
