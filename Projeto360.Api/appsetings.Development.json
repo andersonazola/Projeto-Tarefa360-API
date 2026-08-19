@@ -1,0 +1,12 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  
+  "ConnectionStrings": {
+  "projetoDB": "Server=NB-TI15\\SQLEXPRESS;Database=projetoDB;Trusted_Connection=True;TrustServerCertificate=True;"
+  }
+}
