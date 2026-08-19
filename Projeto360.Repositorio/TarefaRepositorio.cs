@@ -31,9 +31,11 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         await _contexto.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<Tarefa>> Listar()
+    public async Task<IEnumerable<Tarefa>> Listar(bool? concluida)
     {
-        return await _contexto.Tarefas.ToListAsync();
+        return await _contexto.Tarefas
+        .Where(tarefa => concluida == null || tarefa.Concluida == concluida)
+        .ToListAsync();
     }
 
     public async Task<Tarefa> Obter(int tarefaId)

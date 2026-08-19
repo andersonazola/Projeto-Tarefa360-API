@@ -9,6 +9,6 @@ namespace Projeto360.Repositorio.Interfaces
         Task Atualizar(Tarefa tarefa);
         Task<Tarefa> Obter(int tarefaId);
         Task Deletar(Tarefa tarefa);
-        Task<IEnumerable<Tarefa>> Listar();
+        Task<IEnumerable<Tarefa>> Listar(bool? concluida);
     }
 } 
