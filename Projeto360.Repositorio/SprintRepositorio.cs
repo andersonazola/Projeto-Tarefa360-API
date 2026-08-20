@@ -29,7 +29,7 @@ namespace Projeto360.Sprint
         public async Task <Sprint> Obter (int sprintId)
         {
             return await _contexto.Sprints
-                .FirstOrDefaultAsync (sprint => sprintId == sprintId && sprint.Ativo)
+                .FirstOrDefaultAsync (sprint => sprintId == sprintId && sprint.Ativo);
         }
 
         public async Task Deletar (Sprint sprint)
