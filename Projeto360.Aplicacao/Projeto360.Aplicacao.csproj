@@ -4,6 +4,7 @@
     <ProjectReference Include="..\Projeto360.Repositorio\Projeto360.Repositorio.csproj" />
     <ProjectReference Include="..\Projeto360.Dominio\Projeto360.Dominio.csproj" />
     <ProjectReference Include="..\Projeto360.Servicos\Projeto360.Servicos.csproj" />
+    <ProjectReference Include="..\Projeto360.Repositorio\Projeto360.Repositorio.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
