@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Projeto360.Dominio.Entidades;
+using Projeto360.Dominio.Enumeradores;
 using Projeto360.Api.Models.Requisicao;
 using Projeto360.Api.Models.Resposta;
 using Projeto360.Aplicacao;
+using System.Runtime.Versioning;
 
-using Projeto360.Dominio.Enumeradores;
+
 
 
 
@@ -67,6 +69,20 @@ public class UsuarioController : ControllerBase
         }
     }
 
+    [HttpPut]
+    [Route("PrimeiroAcesso")]
+    public async Task<ActionResult> PrimeiroAcesso ([FromBody] PrimeiroAcessoRequisicao requisicao)
+    {
+        try
+        {
+            await _usuarioAplicacao.TrocarSenhaPrimeiroAcesso(requisicao.UsuarioId, requisicao.NovaSenha);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 
 
     [HttpPut]
@@ -156,7 +172,8 @@ public class UsuarioController : ControllerBase
             {
                 Id = usuario.ID,
                 Nome = usuario.Nome,
-                Email = usuario.Email
+                Email = usuario.Email,
+                PrecisaTrocarSenha = usuario.PrecisaTrocarSenha
             }).ToList();
 
             return Ok(usuarios);
