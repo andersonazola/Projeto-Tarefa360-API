@@ -42,6 +42,7 @@ namespace Projeto360.Repositorio
         {
             return await _contexto.Historias
                 .Where(historia => historia.Ativo == ativo)
+                .Include(historia => historia.Projeto)
                 .ToListAsync();
         }
     }
