@@ -12,6 +12,6 @@ public interface ISprintAplicacao
             Task<int> Criar(Sprint sprint);
         Task Atualizar(Sprint sprint);
         Task Deletar(int sprintId);
-        Task<Historia> Obter(int sprintId);
+        Task<Sprint> Obter(int sprintId);
         Task<IEnumerable<Sprint>> Listar(bool ativo);
 }

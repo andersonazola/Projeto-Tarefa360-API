@@ -37,7 +37,7 @@ namespace Projeto360.Aplicacao
 
         public async Task Atualizar(Sprint sprint)
         {
-            var sprintExistente = await_sprintRepositorio.Obter(sprint.Id);
+            var sprintExistente = await _sprintRepositorio.Obter(sprint.Id);
 
             if (sprintExistente == null)
             {

@@ -2,8 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Projeto360.Dominio.Entidades;
 using Projeto360.Entidades;
-using Projeto360.Sprint.Interfaces;
-namespace Projeto360.Sprint
+using Projeto360.Repositorio.Interfaces;
+namespace Projeto360.Repositorio
 {
     public class SprintRepositorio : BaseRepositorio, ISprintRepositorio
     { 
@@ -14,7 +14,7 @@ namespace Projeto360.Sprint
 
         public async Task <int> Salvar (Sprint sprint)
         {
-            sprint.Validar;
+            sprint.Validar();
             await _contexto.Sprints.AddAsync(sprint);
             await _contexto.SaveChangesAsync();
             return sprint.Id;

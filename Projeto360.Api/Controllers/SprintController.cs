@@ -66,7 +66,7 @@ namespace Projeto360.Api.Controllers
 
                 var sprint = new SprintResposta()
                 {
-                    id = sprintDominio.Id,
+                    Id = sprintDominio.Id,
                     Nome = sprintDominio.Nome,
                     ProjetoId = sprintDominio.ProjetoId,
                     DataInicio = sprintDominio.DataInicio,
