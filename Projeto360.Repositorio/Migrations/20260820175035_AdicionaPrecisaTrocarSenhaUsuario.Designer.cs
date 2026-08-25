@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Projeto360.Repositorio.Migrations
 {
     [DbContext(typeof(Projeto360Contexto))]
-    partial class Projeto360ContextoModelSnapshot : ModelSnapshot
+    [Migration("20260820175035_AdicionaPrecisaTrocarSenhaUsuario")]
+    partial class AdicionaPrecisaTrocarSenhaUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,11 +64,6 @@ namespace Projeto360.Repositorio.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
-
- 
                     b.Property<DateTime>("DataFim")
                         .HasColumnType("datetime")
                         .HasColumnName("Data Fim");
@@ -79,8 +76,6 @@ namespace Projeto360.Repositorio.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)")
-
-                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Nome");
 
                     b.Property<int>("ProjetoId")
@@ -172,7 +167,7 @@ namespace Projeto360.Repositorio.Migrations
 
                     b.ToTable("Historias", (string)null);
                 });
-           
+
             modelBuilder.Entity("Projeto360.Dominio.Entidades.Projeto", b =>
                 {
                     b.HasOne("Projeto360.Dominio.Entidades.Sprint", null)
@@ -191,9 +186,6 @@ namespace Projeto360.Repositorio.Migrations
                     b.Navigation("Projeto");
                 });
 
-
-
-            
             modelBuilder.Entity("Projeto360.Entidades.Historia", b =>
                 {
                     b.HasOne("Projeto360.Dominio.Entidades.Projeto", "Projeto")
