@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Projeto360.Api.Models.Requisicao;
 using Projeto360.Api.Models.Resposta;
 using Projeto360.Aplicacao.Interfaces;
-using Projeto360.Dominio.Entidades;
 using Projeto360.Entidades;
 
 
@@ -11,7 +10,7 @@ namespace Projeto360.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    
+
     public class HistoriaController : ControllerBase
     {
         private readonly IHistoriaAplicacao _historiaAplicacao;
@@ -47,8 +46,17 @@ namespace Projeto360.Api.Controllers
         {
             try
             {
-                var historia = await _historiaAplicacao.Listar(ativo);
-                return Ok(historia);
+                var historias = await _historiaAplicacao.Listar(ativo);
+
+                var resposta = historias.Select(historia => new HistoriaResposta()
+                {
+                    Id = historia.Id,
+                    Nome = historia.Nome,
+                    ProjetoId = historia.ProjetoId,
+                    NomeProjeto = historia.Projeto.Nome,
+                    Descricao = historia.Descricao
+                });
+                return Ok(resposta);
             }
             catch (Exception excecao)
             {
@@ -68,6 +76,7 @@ namespace Projeto360.Api.Controllers
                     Id = historiaDominio.Id,
                     Nome = historiaDominio.Nome,
                     ProjetoId = historiaDominio.ProjetoId,
+                    NomeProjeto = historiaDominio.Projeto.Nome,
                     Descricao = historiaDominio.Descricao
                 };
 
