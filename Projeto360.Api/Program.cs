@@ -14,12 +14,15 @@ builder.Services.AddScoped<IUsuarioAplicacao, UsuarioAplicacao>();
 builder.Services.AddScoped<ITarefaAplicacao, TarefaAplicacao>();
 builder.Services.AddScoped<IProjetoAplicacao, ProjetoAplicacao>();
 builder.Services.AddScoped<IHistoriaAplicacao, HistoriaAplicacao>();
+builder.Services.AddScoped<ISprintAplicacao, SprintAplicacao>();
 
 
 // Adicione as interfaces de banco de dados
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
 builder.Services.AddScoped<IHistoriaRepositorio, HistoriaRepositorio>();
+builder.Services.AddScoped<ISprintRepositorio, SprintRepositorio>();
+// isso seria a build do anderson builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>(); 
 
 // Adicione os serviços
 
