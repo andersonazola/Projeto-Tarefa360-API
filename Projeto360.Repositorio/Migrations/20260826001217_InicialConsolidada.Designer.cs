@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Projeto360.Repositorio.Migrations
 {
     [DbContext(typeof(Projeto360Contexto))]
-    [Migration("20260824003128_CriacaoSprint")]
-    partial class CriacaoSprint
+    [Migration("20260826001217_InicialConsolidada")]
+    partial class InicialConsolidada
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -89,6 +89,62 @@ namespace Projeto360.Repositorio.Migrations
                     b.HasIndex("ProjetoId");
 
                     b.ToTable("Sprints", (string)null);
+                });
+
+            modelBuilder.Entity("Projeto360.Dominio.Entidades.Tarefa", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("TarefaId");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<bool>("Concluida")
+                        .HasColumnType("bit")
+                        .HasColumnName("Concluida");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Descricao");
+
+                    b.Property<int>("HistoriaId")
+                        .HasColumnType("int")
+                        .HasColumnName("HistoriaId");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("Nome");
+
+                    b.Property<int>("ProjetoId")
+                        .HasColumnType("int")
+                        .HasColumnName("ProjetoId");
+
+                    b.Property<int>("SprintId")
+                        .HasColumnType("int")
+                        .HasColumnName("SprintId");
+
+                    b.Property<int>("TipoTarefas")
+                        .HasColumnType("int")
+                        .HasColumnName("TipoTarefas");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int")
+                        .HasColumnName("UsuarioId");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("HistoriaId");
+
+                    b.HasIndex("ProjetoId");
+
+                    b.HasIndex("SprintId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Tarefas", (string)null);
                 });
 
             modelBuilder.Entity("Projeto360.Dominio.Entidades.Usuario", b =>
@@ -176,6 +232,41 @@ namespace Projeto360.Repositorio.Migrations
                         .IsRequired();
 
                     b.Navigation("Projeto");
+                });
+
+            modelBuilder.Entity("Projeto360.Dominio.Entidades.Tarefa", b =>
+                {
+                    b.HasOne("Projeto360.Entidades.Historia", "Historia")
+                        .WithMany()
+                        .HasForeignKey("HistoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Projeto360.Dominio.Entidades.Projeto", "Projeto")
+                        .WithMany()
+                        .HasForeignKey("ProjetoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Projeto360.Dominio.Entidades.Sprint", "Sprint")
+                        .WithMany()
+                        .HasForeignKey("SprintId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Projeto360.Dominio.Entidades.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Historia");
+
+                    b.Navigation("Projeto");
+
+                    b.Navigation("Sprint");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Projeto360.Entidades.Historia", b =>
