@@ -33,13 +33,15 @@ public class TarefaConfiguracoes : IEntityTypeConfiguration<Tarefa>
         .HasOne(tarefa => tarefa.Historia)
         .WithMany()
         .HasForeignKey(tarefa => tarefa.HistoriaId)
-        .IsRequired(true);
+        .IsRequired(true)
+        .OnDelete(DeleteBehavior.NoAction);
 
         builder
         .HasOne(tarefa => tarefa.Projeto)
         .WithMany()
         .HasForeignKey(tarefa => tarefa.ProjetoId)
-        .IsRequired(true);
+        .IsRequired(true)
+        .OnDelete(DeleteBehavior.NoAction);
 
         builder
         .HasOne(tarefa => tarefa.Usuario)
