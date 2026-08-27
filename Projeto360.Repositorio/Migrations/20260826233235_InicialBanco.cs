@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Projeto360.Repositorio.Migrations
 {
-    public partial class InicialConsolidada : Migration
+    public partial class InicialBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -102,14 +102,12 @@ namespace Projeto360.Repositorio.Migrations
                         name: "FK_Tarefas_Historias_HistoriaId",
                         column: x => x.HistoriaId,
                         principalTable: "Historias",
-                        principalColumn: "HistoriaId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "HistoriaId");
                     table.ForeignKey(
                         name: "FK_Tarefas_Projeto_ProjetoId",
                         column: x => x.ProjetoId,
                         principalTable: "Projeto",
-                        principalColumn: "ProjetoId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ProjetoId");
                     table.ForeignKey(
                         name: "FK_Tarefas_Sprints_SprintId",
                         column: x => x.SprintId,

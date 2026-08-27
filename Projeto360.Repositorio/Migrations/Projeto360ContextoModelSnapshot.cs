@@ -237,13 +237,13 @@ namespace Projeto360.Repositorio.Migrations
                     b.HasOne("Projeto360.Entidades.Historia", "Historia")
                         .WithMany()
                         .HasForeignKey("HistoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Projeto360.Dominio.Entidades.Projeto", "Projeto")
                         .WithMany()
                         .HasForeignKey("ProjetoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Projeto360.Dominio.Entidades.Sprint", "Sprint")

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Projeto360.Repositorio.Migrations
 {
     [DbContext(typeof(Projeto360Contexto))]
-    [Migration("20260826001217_InicialConsolidada")]
-    partial class InicialConsolidada
+    [Migration("20260826233235_InicialBanco")]
+    partial class InicialBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -239,13 +239,13 @@ namespace Projeto360.Repositorio.Migrations
                     b.HasOne("Projeto360.Entidades.Historia", "Historia")
                         .WithMany()
                         .HasForeignKey("HistoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Projeto360.Dominio.Entidades.Projeto", "Projeto")
                         .WithMany()
                         .HasForeignKey("ProjetoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("Projeto360.Dominio.Entidades.Sprint", "Sprint")
