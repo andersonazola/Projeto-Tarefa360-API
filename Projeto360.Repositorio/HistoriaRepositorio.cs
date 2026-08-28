@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Projeto360.Dominio.Entidades;
+using Projeto360.Dominio.Enumeradores;
 using Projeto360.Entidades;
 using Projeto360.Repositorio.Interfaces;
 
@@ -44,6 +45,23 @@ namespace Projeto360.Repositorio
                 .Where(historia => historia.Ativo == ativo)
                 .Include(historia => historia.Projeto)
                 .ToListAsync();
+        }
+
+        //Conta toas as histórias ativas de um projeto
+        public int ContarTotalHistorias(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo);
+        }
+
+        //Conta histórias que estão marcadas como completas
+        public int ContarHistoriasFechadas(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == h.ProjetoId && h.Ativo && h.Status == StatusHistoria.Concluida);
+        }
+
+        public int ContarHistoriasAbertas(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo && h.Status == StatusHistoria.Aberta);
         }
     }
 }
