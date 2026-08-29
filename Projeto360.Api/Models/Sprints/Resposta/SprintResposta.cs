@@ -9,6 +9,7 @@ public class SprintResposta
     public string Nome {get; set;}
 
     public int ProjetoId {get; set;}
+    public string NomeProjeto {get; set;}
 
     public DateTime DataInicio {get; set;}
 
