@@ -123,7 +123,27 @@ namespace Projeto360.Api.Controllers
             try
             {
                 var tarefa = await _tarefaAplicacao.Listar(concluida);
-                return Ok(tarefa);
+                var resposta = tarefa.Select(tarefa => new TarefaResposta()
+                {
+                    Id = tarefa.ID,
+                    Nome = tarefa.Nome,
+                    Descricao = tarefa.Descricao,
+                    TiposTarefas = tarefa.TipoTarefas,
+                    Concluida = tarefa.Concluida,
+
+                    ProjetoId = tarefa.ProjetoId,
+                    NomeProjeto = tarefa.Projeto.Nome,
+
+                    HistoriaId = tarefa.HistoriaId,
+                    NomeHistoria = tarefa.Historia.Nome,
+
+                    SprintId = tarefa.SprintId,
+                    NomeSprint = tarefa.Sprint.Nome,
+
+                    UsuarioId = tarefa.UsuarioId,
+                    NomeUsuario = tarefa.Usuario.Nome
+                });
+                return Ok(resposta);
             }
             catch (Exception ex)
             {
@@ -138,7 +158,27 @@ namespace Projeto360.Api.Controllers
             try
             {
                 var tarefa = await _tarefaAplicacao.ListarTodasTarefas();
-                return Ok(tarefa);
+                var resposta = tarefa.Select(tarefa => new TarefaResposta()
+                {
+                    Id = tarefa.ID,
+                    Nome = tarefa.Nome,
+                    Descricao = tarefa.Descricao,
+                    TiposTarefas = tarefa.TipoTarefas,
+                    Concluida = tarefa.Concluida,
+
+                    ProjetoId = tarefa.ProjetoId,
+                    NomeProjeto = tarefa.Projeto.Nome,
+
+                    HistoriaId = tarefa.HistoriaId,
+                    NomeHistoria = tarefa.Historia.Nome,
+
+                    SprintId = tarefa.SprintId,
+                    NomeSprint = tarefa.Sprint.Nome,
+
+                    UsuarioId = tarefa.UsuarioId,
+                    NomeUsuario = tarefa.Usuario.Nome
+                });
+                return Ok(resposta);
             }
             catch (Exception ex)
             {

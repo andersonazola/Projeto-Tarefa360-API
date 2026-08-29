@@ -37,8 +37,13 @@ public class TarefaAplicacao : ITarefaAplicacao
             throw new Exception("Nome da tarefa é obrigatório");
         }
         tarefaExistente.Nome = tarefa.Nome;
-        tarefaExistente.Projeto = tarefa.Projeto;
         tarefaExistente.Descricao = tarefa.Descricao;
+        tarefaExistente.Concluida = tarefa.Concluida;
+        tarefaExistente.ProjetoId = tarefa.ProjetoId;
+        tarefaExistente.SprintId = tarefa.SprintId;
+        tarefaExistente.HistoriaId = tarefa.HistoriaId;
+        tarefaExistente.UsuarioId = tarefa.UsuarioId;
+        tarefaExistente.TipoTarefas = tarefa.TipoTarefas;
 
         await _tarefaRepositorio.Atualizar(tarefaExistente);
     }

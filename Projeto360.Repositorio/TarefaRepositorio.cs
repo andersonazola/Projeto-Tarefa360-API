@@ -35,12 +35,21 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
     {
         return await _contexto.Tarefas
         .Where(tarefa => concluida == null || tarefa.Concluida == concluida)
+        .Include(tarefa => tarefa.Usuario)
+        .Include(tarefa => tarefa.Projeto)
+        .Include(tarefa => tarefa.Sprint)
+        .Include(tarefa => tarefa.Historia)
         .ToListAsync();
     }
 
     public async Task<Tarefa> Obter(int tarefaId)
     {
-        return await _contexto.Tarefas.Where(t => t.ID == tarefaId).FirstOrDefaultAsync();
+        return await _contexto.Tarefas
+        .Include(tarefa => tarefa.Usuario)
+        .Include(tarefa => tarefa.Projeto)
+        .Include(tarefa => tarefa.Sprint)
+        .Include(tarefa => tarefa.Historia)
+        .Where(tarefa => tarefa.ID == tarefaId).FirstOrDefaultAsync();
     }
 
 }
