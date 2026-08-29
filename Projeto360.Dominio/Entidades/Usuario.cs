@@ -1,4 +1,6 @@
 namespace Projeto360.Dominio.Entidades;
+using Projeto360.Dominio.Enumeradores;
+
 
 public class Usuario
 {
@@ -7,10 +9,14 @@ public class Usuario
     public string Email { get; set; }
     public string Senha { get; set; }
     public bool Ativo { get; set; }
+    public TiposUsuarios TipoUsuario { get; set; }
+    public bool PrecisaTrocarSenha {get; set;}    
+
 
     public Usuario()
     {
         Ativo = true;
+        PrecisaTrocarSenha = true; //Todo novo usuário cadastrado nasce precisando trocar senha
     }
 
     public void Deletar()
@@ -21,6 +27,12 @@ public class Usuario
     public void Restaurar()
     {
         Ativo = true;
+    }
+
+    public void TrocarSenhaPrimeiroAcesso(string novaSenha)
+    {
+        Senha = novaSenha;
+        PrecisaTrocarSenha = false; //Desmarca a flag no primeiro acesso concluído
     }
 
 }
