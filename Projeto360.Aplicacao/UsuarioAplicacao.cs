@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Projeto360.Dominio.Entidades;
 
-
 namespace Projeto360.Aplicacao;
 
 public class UsuarioAplicacao : IUsuarioAplicacao
@@ -26,6 +25,11 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         if (string.IsNullOrEmpty(usuario.Senha))
             throw new Exception("Senha não pode ser vázia");
 
+        if (usuario.Senha.Length < 6)    
+            throw new Exception ("A senha temporária deve ter no mínimo 6 caracteres.");
+
+        
+
         return await _usuarioRepositorio.Salvar(usuario);
     }
 
@@ -41,6 +45,21 @@ public class UsuarioAplicacao : IUsuarioAplicacao
 
         usuarioDominio.Nome = usuario.Nome;
         usuarioDominio.Email = usuario.Email;
+
+        await _usuarioRepositorio.Atualizar(usuarioDominio);
+    }
+
+    public async Task TrocarSenhaPrimeiroAcesso(int usuarioId, string novaSenha)
+    {
+        if (string.IsNullOrEmpty(novaSenha) || novaSenha.Length < 6)
+            throw new Exception("A nova senha deve ter no mínimo 6 caracteres.");
+
+        var usuarioDominio = await _usuarioRepositorio.ObterPorId(usuarioId);
+
+        if (usuarioDominio == null)
+            throw new Exception("Usuario não encontrado");
+
+        usuarioDominio.TrocarSenhaPrimeiroAcesso(novaSenha);
 
         await _usuarioRepositorio.Atualizar(usuarioDominio);
     }
