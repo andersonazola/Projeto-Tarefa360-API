@@ -9,4 +9,5 @@ public class HistoriaResposta
     public int ProjetoId { get; set; }
     public string NomeProjeto { get; set; }
     public string Descricao { get; set; }
+    public bool Ativo { get; set; }
 }
