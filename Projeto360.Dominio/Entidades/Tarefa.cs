@@ -25,12 +25,13 @@ public class Tarefa
     public int UsuarioId { get; set; }
 
     public bool Concluida { get; set; }
+    public bool Ativa { get; set; }
 
 
     public Tarefa()
     {
         Concluida = false;
-
+        Ativa = true;
     }
 
     public void validarNome()

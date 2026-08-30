@@ -33,6 +33,7 @@ namespace Projeto360.Api.Controllers
                     Descricao = tarefa.Descricao,
                     TipoTarefas = tarefa.TiposTarefas,
                     Concluida = tarefa.Concluida,
+                    Ativa = tarefa.Ativa,
                     ProjetoId = tarefa.ProjetoId,
                     HistoriaId = tarefa.HistoriaId,
                     SprintId = tarefa.SprintId,
@@ -60,6 +61,7 @@ namespace Projeto360.Api.Controllers
                     Descricao = tarefa.Descricao,
                     TipoTarefas = tarefa.TiposTarefas,
                     Concluida = tarefa.Concluida,
+                    Ativa = tarefa.Ativa,
                     ProjetoId = tarefa.ProjetoId,
                     HistoriaId = tarefa.HistoriaId,
                     SprintId = tarefa.SprintId,
@@ -93,6 +95,7 @@ namespace Projeto360.Api.Controllers
                     Descricao = tarefaDominio.Descricao,
                     TiposTarefas = tarefaDominio.TipoTarefas,
                     Concluida = tarefaDominio.Concluida,
+                    Ativa = tarefaDominio.Ativa,
 
                     ProjetoId = tarefaDominio.ProjetoId,
                     NomeProjeto = tarefaDominio.Projeto.Nome,
@@ -130,6 +133,7 @@ namespace Projeto360.Api.Controllers
                     Descricao = tarefa.Descricao,
                     TiposTarefas = tarefa.TipoTarefas,
                     Concluida = tarefa.Concluida,
+                    Ativa = tarefa.Ativa,
 
                     ProjetoId = tarefa.ProjetoId,
                     NomeProjeto = tarefa.Projeto.Nome,
@@ -165,6 +169,7 @@ namespace Projeto360.Api.Controllers
                     Descricao = tarefa.Descricao,
                     TiposTarefas = tarefa.TipoTarefas,
                     Concluida = tarefa.Concluida,
+                    Ativa = tarefa.Ativa,
 
                     ProjetoId = tarefa.ProjetoId,
                     NomeProjeto = tarefa.Projeto.Nome,

@@ -39,6 +39,7 @@ public class TarefaAplicacao : ITarefaAplicacao
         tarefaExistente.Nome = tarefa.Nome;
         tarefaExistente.Descricao = tarefa.Descricao;
         tarefaExistente.Concluida = tarefa.Concluida;
+        tarefaExistente.Ativa = tarefa.Ativa;
         tarefaExistente.ProjetoId = tarefa.ProjetoId;
         tarefaExistente.SprintId = tarefa.SprintId;
         tarefaExistente.HistoriaId = tarefa.HistoriaId;

@@ -5,7 +5,7 @@ using Projeto360.Repositorio.Configuracoes;
 
 public class Projeto360Contexto : DbContext
 {
-    private readonly DbContextOptions _options;
+
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Projeto> Projetos { get; set; }
     public DbSet<Historia> Historias { get; set; }

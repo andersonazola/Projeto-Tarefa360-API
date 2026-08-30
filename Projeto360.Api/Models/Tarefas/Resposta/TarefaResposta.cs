@@ -9,6 +9,7 @@ public class TarefaResposta
     public string Descricao { get; set; }
     public TiposTarefas TiposTarefas { get; set; }
     public bool Concluida { get; set; }
+    public bool Ativa { get; set; }
 
     public int ProjetoId { get; set; }
     public string NomeProjeto { get; set; }
