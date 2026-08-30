@@ -69,16 +69,25 @@ public class TarefaAplicacao : ITarefaAplicacao
         return await _tarefaRepositorio.Listar(null);
     }
 
-    public async Task<IEnumerable<Tarefa>>Listar(bool concluida)
+    public async Task<IEnumerable<Tarefa>> Listar(bool concluida)
     {
         return await _tarefaRepositorio.Listar(concluida);
     }
 
-    public async Task ConcluirTarefa(int TarefaId)
+    public async Task ConcluirTarefa(int id)
     {
-        var tarefa = await _tarefaRepositorio.Obter(TarefaId);
-        tarefa.Concluida = true;
-        await _tarefaRepositorio.Atualizar(tarefa);
+
+        var tarefa = await _tarefaRepositorio.Obter(id);
+        if (tarefa.Ativa == false)
+        {
+            throw new ArgumentException("Não é possivel concluir uma tarefa que não esteja ativa");
+        }
+        if(tarefa.Concluida == true)
+        {
+            throw new Exception("Essa tarefa ja foi concluida antes!");
+        }
+        await _tarefaRepositorio.ConcluirTarefa(tarefa);
+        Console.WriteLine("Tarefa concluida com sucesso!");
     }
 
 

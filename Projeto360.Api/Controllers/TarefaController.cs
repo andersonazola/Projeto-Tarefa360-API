@@ -6,6 +6,7 @@ using Projeto360.Aplicacao;
 using Projeto360.Aplicacao.Interfaces;
 using Projeto360.Dominio.Entidades;
 using Projeto360.Entidades;
+using SQLitePCL;
 
 namespace Projeto360.Api.Controllers
 {
@@ -32,12 +33,11 @@ namespace Projeto360.Api.Controllers
                     Nome = tarefa.Nome,
                     Descricao = tarefa.Descricao,
                     TipoTarefas = tarefa.TiposTarefas,
-                    Concluida = tarefa.Concluida,
-                    Ativa = tarefa.Ativa,
                     ProjetoId = tarefa.ProjetoId,
                     HistoriaId = tarefa.HistoriaId,
                     SprintId = tarefa.SprintId,
                     UsuarioId = tarefa.UsuarioId
+                    
                 };
 
                 var tarefaId = await _tarefaAplicacao.Criar(tarefaDominio);
@@ -118,6 +118,19 @@ namespace Projeto360.Api.Controllers
             }
         }
 
+        [HttpPut("Concluir/{id}")]
+        public async Task<ActionResult> ConcluirTarefa(int id)
+        {
+            try
+            {
+                await _tarefaAplicacao.ConcluirTarefa(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
 
         [HttpGet("Listar")]

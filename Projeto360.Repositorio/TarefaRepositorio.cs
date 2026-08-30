@@ -52,5 +52,11 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         .Include(tarefa => tarefa.Historia)
         .Where(tarefa => tarefa.ID == tarefaId).FirstOrDefaultAsync();
     }
+    public async Task ConcluirTarefa(Tarefa tarefa)
+    {
+        tarefa.Concluida = true;
+        _contexto.Update(tarefa);
+        await _contexto.SaveChangesAsync();
+    }
 
 }

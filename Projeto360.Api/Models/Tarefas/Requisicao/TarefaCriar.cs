@@ -8,8 +8,8 @@ public class TarefaCriar
     public string Nome { get; set; }
     public string Descricao { get; set; }
     public TiposTarefas TiposTarefas { get; set; }
-    public bool Concluida { get; set; }
-    public bool Ativa { get; set; }
+    public bool Concluida = false;
+    public bool Ativa = true;
 
     public int ProjetoId { get; set; }
     public int HistoriaId { get; set; }
@@ -17,9 +17,5 @@ public class TarefaCriar
     public int UsuarioId { get; set; }
 
 
-    public TarefaCriar()
-    {
-        Ativa = true;
-        Concluida = false;
-    }
+
 }

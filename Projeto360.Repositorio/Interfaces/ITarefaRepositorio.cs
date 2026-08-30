@@ -10,5 +10,6 @@ namespace Projeto360.Repositorio.Interfaces
         Task<Tarefa> Obter(int tarefaId);
         Task Deletar(Tarefa tarefa);
         Task<IEnumerable<Tarefa>> Listar(bool? concluida);
+        Task ConcluirTarefa (Tarefa tarefa);
     }
 } 
