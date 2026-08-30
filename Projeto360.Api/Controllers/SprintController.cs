@@ -49,7 +49,16 @@ namespace Projeto360.Api.Controllers
             try
             {
                 var sprint = await _sprintAplicacao.Listar(ativo);
-                return Ok (sprint);
+                var resposta = sprint.Select(sprint => new SprintResposta()
+                {
+                    Id = sprint.Id,
+                    Nome = sprint.Nome,
+                    ProjetoId = sprint.ProjetoId,
+                    NomeProjeto = sprint.Projeto.Nome,
+                    DataInicio = sprint.DataInicio,
+                    DataFim = sprint.DataFim
+                });
+                return Ok (resposta.ToList());
             }
             catch (Exception excecao)
             {
@@ -69,6 +78,7 @@ namespace Projeto360.Api.Controllers
                     Id = sprintDominio.Id,
                     Nome = sprintDominio.Nome,
                     ProjetoId = sprintDominio.ProjetoId,
+                    NomeProjeto = sprintDominio.Projeto.Nome,
                     DataInicio = sprintDominio.DataInicio,
                     DataFim = sprintDominio.DataFim,
                 };

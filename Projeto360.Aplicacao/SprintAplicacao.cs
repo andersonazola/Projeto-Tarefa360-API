@@ -50,7 +50,9 @@ namespace Projeto360.Aplicacao
             }
 
             sprintExistente.Nome = sprint.Nome;
-            sprintExistente.Projeto = sprint.Projeto;
+            sprintExistente.ProjetoId = sprint.ProjetoId;
+            sprintExistente.DataInicio = sprint.DataInicio;
+            sprintExistente.DataFim = sprint.DataFim;
 
             await _sprintRepositorio.Atualizar(sprintExistente);
         }

@@ -29,7 +29,8 @@ namespace Projeto360.Repositorio
         public async Task <Sprint> Obter (int sprintId)
         {
             return await _contexto.Sprints
-                .FirstOrDefaultAsync (sprint => sprintId == sprintId && sprint.Ativo);
+                .Include(sprint => sprint.Projeto)
+                .FirstOrDefaultAsync (sprint => sprint.Id == sprintId && sprint.Ativo);
         }
 
         public async Task Deletar (Sprint sprint)
@@ -43,6 +44,7 @@ namespace Projeto360.Repositorio
         {
             return await _contexto.Sprints
             .Where(sprint => sprint.Ativo == ativo)
+            .Include(sprint => sprint.Projeto)
             .ToListAsync();
         }
     }
