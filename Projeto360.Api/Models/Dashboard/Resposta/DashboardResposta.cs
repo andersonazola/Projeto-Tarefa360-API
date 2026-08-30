@@ -4,17 +4,17 @@ namespace Projeto360.Api.Models.Dashboard.Resposta
     {
         public int ProjetoId {get; set;}
         
-        //Indicadores de Horas
-        public int TotalHoras {get; set;}
-        public int HorasEntregues {get; set;}
-        public int HorasRestantes {get; set;}
+        //Indicadores de Tarefas
+        public int TotalTarefas {get; set;}
+        public int TarefasConcluidas {get; set;}
+        public int TarefasFechadas {get; set;}
 
-        //Indicadores de Histórias
+        //Indicadores de Historias
         public int TotalHistorias {get; set;}
         public int HistoriasFechadas {get; set;}
-        public int HitoriasAbertas {get; set;}
+        public int HistoriasAbertas {get; set;}
 
-        //Indicadores de Bugs
+        //Indicadores de Bug
         public int TotalBugs {get; set;}
         public int BugsFechados {get; set;}
         public int BugsAbertos {get; set;}
