@@ -18,7 +18,7 @@ namespace Projeto360.Repositorio
             await _contexto.Historias.AddAsync(historia);
             await _contexto.SaveChangesAsync();
             return historia.Id;
-        } 
+        }
 
         public async Task Atualizar(Historia historia)
         {
@@ -29,7 +29,8 @@ namespace Projeto360.Repositorio
         public async Task<Historia> Obter(int historiaId)
         {
             return await _contexto.Historias
-                .FirstOrDefaultAsync(historia => historia.Id == historiaId && historia.Ativo);
+            .Include(historia => historia.Projeto)
+            .FirstOrDefaultAsync(historia => historia.Id == historiaId && historia.Ativo);
         }
 
         public async Task Deletar(Historia historia)
