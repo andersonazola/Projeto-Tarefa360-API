@@ -36,6 +36,7 @@ public class UsuarioController : ControllerBase
                 Id = usuarioDominio.ID,
                 Nome = usuarioDominio.Nome,
                 Email = usuarioDominio.Email,
+                TipoUsuario = usuarioDominio.TipoUsuario
             };
             return Ok(usuario);
         }
@@ -55,7 +56,8 @@ public class UsuarioController : ControllerBase
             {
                 Nome = usuario.Nome,
                 Email = usuario.Email,
-                Senha = usuario.Senha
+                Senha = usuario.Senha,
+                TipoUsuario = usuario.TipoUsuario
             };
             var usuarioID = await _usuarioAplicacao.Criar(usuarioDominio);
             return Ok(usuarioID);
@@ -80,7 +82,8 @@ public class UsuarioController : ControllerBase
             {
                 ID = usuario.Id,
                 Nome = usuario.Nome,
-                Email = usuario.Email
+                Email = usuario.Email,
+                TipoUsuario = usuario.TipoUsuario
             };
             await _usuarioAplicacao.Atualizar(usuarioDominio);
 
