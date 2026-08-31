@@ -48,19 +48,19 @@ namespace Projeto360.Repositorio
                 .ToListAsync();
         }
 
-        //Conta toas as histórias ativas de um projeto
-        public int ContarTotalHistorias(int projetoId)
+        //Conta todas as histórias ativas de um projeto
+        public async Task <int> ContarTotalHistorias(int projetoId)
         {
             return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo);
         }
 
         //Conta histórias que estão marcadas como completas
-        public int ContarHistoriasFechadas(int projetoId)
+        public async Task <int> ContarHistoriasFechadas(int projetoId)
         {
             return _contexto.Historias.Count(h => h.ProjetoId == h.ProjetoId && h.Ativo && h.Status == StatusHistoria.Concluida);
         }
 
-        public int ContarHistoriasAbertas(int projetoId)
+        public async Task<int> ContarHistoriasAbertas(int projetoId)
         {
             return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo && h.Status == StatusHistoria.Aberta);
         }
