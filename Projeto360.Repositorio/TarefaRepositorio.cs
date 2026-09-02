@@ -63,7 +63,7 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
     public async Task <int> ContarTotalTarefas (int projetoId)
     {
         return await _contexto.Tarefas
-            .CountAsync(t => t.Projeto.Id == projetoId);
+            .CountAsync(t => t.ProjetoId == projetoId);
     }
 
     public async Task<int> ContarTarefasConcluidas(int projetoId)
