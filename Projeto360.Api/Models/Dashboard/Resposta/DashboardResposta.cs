@@ -6,8 +6,8 @@ namespace Projeto360.Api.Models.Dashboard.Resposta
         
         //Indicadores de Tarefas
         public int TotalTarefas {get; set;}
-        public int TarefasConcluidas {get; set;}
-        public int TarefasFechadas {get; set;}
+        public int TarefasConcluidas {get; set;}        
+        public int TarefasAbertas { get; set; }
 
         //Indicadores de Historias
         public int TotalHistorias {get; set;}
@@ -18,5 +18,6 @@ namespace Projeto360.Api.Models.Dashboard.Resposta
         public int TotalBugs {get; set;}
         public int BugsFechados {get; set;}
         public int BugsAbertos {get; set;}
+        
     }
 }
