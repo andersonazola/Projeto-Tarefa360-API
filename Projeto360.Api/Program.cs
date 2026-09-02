@@ -15,6 +15,7 @@ builder.Services.AddScoped<ITarefaAplicacao, TarefaAplicacao>();
 builder.Services.AddScoped<IProjetoAplicacao, ProjetoAplicacao>();
 builder.Services.AddScoped<IHistoriaAplicacao, HistoriaAplicacao>();
 builder.Services.AddScoped<ISprintAplicacao, SprintAplicacao>();
+builder.Services.AddScoped<IDashboardAplicacao, DashboardAplicacao>();
 
 
 // Adicione as interfaces de banco de dados
