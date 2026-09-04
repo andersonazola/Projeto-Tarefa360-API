@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Projeto360.Dominio.Entidades;
+using Projeto360.Dominio.Enumeradores;
 using Projeto360.Entidades;
 using Projeto360.Repositorio.Interfaces;
 
@@ -59,4 +60,39 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         await _contexto.SaveChangesAsync();
     }
 
+    public async Task <int> ContarTotalTarefas (int projetoId)
+    {
+        return await _contexto.Tarefas
+            .CountAsync(t => t.ProjetoId == projetoId);
+    }
+
+    public async Task<int> ContarTarefasConcluidas(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .CountAsync(t => t.ProjetoId == projetoId && t.Concluida == true);
+    }
+
+    public async Task<int> ContarTarefasAbertas(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .CountAsync(t => t.ProjetoId == projetoId && t.Concluida == false);
+    }
+
+    public async Task<int> ContarTotalBugs(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .CountAsync(t => t.ProjetoId == projetoId && t.TipoTarefas == TiposTarefas.Bug);
+    }
+
+    public async Task<int> ContarBugsFechados(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .CountAsync(t => t.ProjetoId == projetoId && t.TipoTarefas == TiposTarefas.Bug && t.Concluida == true);
+    }
+
+    public async Task<int> ContarBugsAbertos(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .CountAsync(t => t.ProjetoId == projetoId && t.TipoTarefas == TiposTarefas.Bug && t.Concluida == false);
+    }
 }
