@@ -57,7 +57,7 @@ namespace Projeto360.Repositorio
         //Conta histórias que estão marcadas como completas
         public async Task <int> ContarHistoriasFechadas(int projetoId)
         {
-            return _contexto.Historias.Count(h => h.ProjetoId == h.ProjetoId && h.Ativo && h.Status == StatusHistoria.Concluida);
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo && h.Status == StatusHistoria.Concluida);
         }
 
         public async Task<int> ContarHistoriasAbertas(int projetoId)
