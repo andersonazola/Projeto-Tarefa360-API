@@ -46,7 +46,6 @@ namespace Projeto360.Aplicacao
                 throw new Exception("Nome da história é obrigatório!");
             }
             historiaExistente.Nome = historia.Nome;
-            historiaExistente.Projeto = historia.Projeto;
             historiaExistente.ProjetoId = historia.ProjetoId;
             historiaExistente.Descricao = historia.Descricao;
             historiaExistente.Ativo = historia.Ativo;
