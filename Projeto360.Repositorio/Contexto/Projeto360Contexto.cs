@@ -1,3 +1,4 @@
+using DataAccess.Configuracores;
 using Microsoft.EntityFrameworkCore;
 using Projeto360.Dominio.Entidades;
 using Projeto360.Entidades;
