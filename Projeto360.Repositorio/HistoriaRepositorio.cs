@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Projeto360.Dominio.Entidades;
+using Projeto360.Dominio.Enumeradores;
 using Projeto360.Entidades;
 using Projeto360.Repositorio.Interfaces;
 
@@ -18,7 +19,7 @@ namespace Projeto360.Repositorio
             await _contexto.Historias.AddAsync(historia);
             await _contexto.SaveChangesAsync();
             return historia.Id;
-        } 
+        }
 
         public async Task Atualizar(Historia historia)
         {
@@ -29,7 +30,8 @@ namespace Projeto360.Repositorio
         public async Task<Historia> Obter(int historiaId)
         {
             return await _contexto.Historias
-                .FirstOrDefaultAsync(historia => historia.Id == historiaId && historia.Ativo);
+            .Include(historia => historia.Projeto)
+            .FirstOrDefaultAsync(historia => historia.Id == historiaId && historia.Ativo);
         }
 
         public async Task Deletar(Historia historia)
@@ -44,6 +46,23 @@ namespace Projeto360.Repositorio
                 .Where(historia => historia.Ativo == ativo)
                 .Include(historia => historia.Projeto)
                 .ToListAsync();
+        }
+
+        //Conta todas as histórias ativas de um projeto
+        public async Task <int> ContarTotalHistorias(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo);
+        }
+
+        //Conta histórias que estão marcadas como completas
+        public async Task <int> ContarHistoriasFechadas(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo && h.Status == StatusHistoria.Concluida);
+        }
+
+        public async Task<int> ContarHistoriasAbertas(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo && h.Status == StatusHistoria.Aberta);
         }
     }
 }

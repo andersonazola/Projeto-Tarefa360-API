@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Projeto360.Dominio.Entidades;
 
-namespace DataAccess.Configuracores
+namespace Projeto360.Repositorio.Configuracoes
 {
     public class ProjetoConfiguracoes : IEntityTypeConfiguration<Projeto>
     {

@@ -4,7 +4,7 @@ using Projeto360.Aplicacao;
 using Projeto360.Aplicacao.Interfaces;
 using Projeto360.Repositorio;
 using Projeto360.Repositorio.Interfaces;
-using Projeto360.Servicos.Interfaces;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +15,7 @@ builder.Services.AddScoped<ITarefaAplicacao, TarefaAplicacao>();
 builder.Services.AddScoped<IProjetoAplicacao, ProjetoAplicacao>();
 builder.Services.AddScoped<IHistoriaAplicacao, HistoriaAplicacao>();
 builder.Services.AddScoped<ISprintAplicacao, SprintAplicacao>();
+builder.Services.AddScoped<IDashboardAplicacao, DashboardAplicacao>();
 
 
 // Adicione as interfaces de banco de dados
@@ -22,7 +23,8 @@ builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 builder.Services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
 builder.Services.AddScoped<IHistoriaRepositorio, HistoriaRepositorio>();
 builder.Services.AddScoped<ISprintRepositorio, SprintRepositorio>();
-// isso seria a build do anderson builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>(); 
+builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>();
+
 
 // Adicione os serviços
 
@@ -38,7 +40,7 @@ builder.Services.AddCors(options =>
 });
 
 
-builder.Services.AddScoped<IJsonPlaceHolderServico, JsonPlaceHolderServico>();
+
 
 builder.Services.AddControllers();
 

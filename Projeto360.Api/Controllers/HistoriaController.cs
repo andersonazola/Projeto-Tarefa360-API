@@ -29,15 +29,17 @@ namespace Projeto360.Api.Controllers
                 {
                     Nome = historia.Nome,
                     ProjetoId = historia.ProjetoId,
-                    Descricao = historia.Descricao
+                    Descricao = historia.Descricao,
+                    Ativo = historia.Ativo
+                    
                 };
 
-                var usuarioId = await _historiaAplicacao.Criar(historiaDominio);
-                return Ok(usuarioId);
+                var historiaId = await _historiaAplicacao.Criar(historiaDominio);
+                return Ok(historiaDominio.Id);
             }
-            catch (Exception excecao)
+            catch (Exception ex)
             {
-                return BadRequest(excecao.Message);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -54,13 +56,14 @@ namespace Projeto360.Api.Controllers
                     Nome = historia.Nome,
                     ProjetoId = historia.ProjetoId,
                     NomeProjeto = historia.Projeto.Nome,
-                    Descricao = historia.Descricao
+                    Descricao = historia.Descricao,
+                    Ativo = historia.Ativo
                 });
-                return Ok(resposta);
+                return Ok(resposta.ToList());
             }
-            catch (Exception excecao)
+            catch (Exception ex)
             {
-                return BadRequest(excecao.Message);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -77,14 +80,16 @@ namespace Projeto360.Api.Controllers
                     Nome = historiaDominio.Nome,
                     ProjetoId = historiaDominio.ProjetoId,
                     NomeProjeto = historiaDominio.Projeto.Nome,
-                    Descricao = historiaDominio.Descricao
+                    Descricao = historiaDominio.Descricao,
+                    Ativo = historiaDominio.Ativo
+
                 };
 
                 return Ok(historia);
             }
-            catch (Exception excecao)
+            catch (Exception ex)
             {
-                return BadRequest(excecao.Message);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -104,9 +109,9 @@ namespace Projeto360.Api.Controllers
                 await _historiaAplicacao.Atualizar(historiaDominio);
                 return Ok();
             }
-            catch (Exception excecao)
+            catch (Exception ex)
             {
-                return BadRequest(excecao.Message);
+                return BadRequest(ex.Message);
             }
         }
 
@@ -118,9 +123,9 @@ namespace Projeto360.Api.Controllers
                 await _historiaAplicacao.Deletar(id);
                 return Ok();
             }
-            catch (Exception excecao)
+            catch (Exception ex)
             {
-                return BadRequest(excecao.Message);
+                return BadRequest(ex.Message);
             }
         }
     }

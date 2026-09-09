@@ -1,13 +1,16 @@
 using System.ComponentModel;
+using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Projeto360.Aplicacao.Interfaces;
 using Projeto360.Dominio.Entidades;
+using Projeto360.Api.Models.Resposta;
+using Projeto360.Api.Models.Requisicao;
 
 namespace Projeto360.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    
+
     public class ProjetoController : ControllerBase
     {
         private readonly IProjetoAplicacao _projetoAplicacao;
@@ -18,12 +21,20 @@ namespace Projeto360.Api.Controllers
         }
 
         [HttpPost("Criar")]
-        public async Task<ActionResult> Criar([FromBody] Projeto projeto)
+        public async Task<ActionResult> Criar([FromBody] ProjetoCriar projeto)
         {
             try
             {
-                var id = await _projetoAplicacao.Criar(projeto);
-                return Ok(id);
+                var projetoDominio = new Projeto()
+                {
+                    Nome = projeto.Nome,
+                    Descricao = projeto.Descricao,
+                    Ativo = projeto.Ativo = true
+                };
+
+
+                var projetoId = await _projetoAplicacao.Criar(projetoDominio);
+                return Ok(projetoDominio.Id);
             }
             catch (Exception ex)
             {
@@ -37,7 +48,16 @@ namespace Projeto360.Api.Controllers
             try
             {
                 var projetos = await _projetoAplicacao.Listar();
-                return Ok(projetos);
+                var resposta = projetos.Select(projeto => new ProjetoReposta()
+                {
+                    Id = projeto.Id,
+                    Nome = projeto.Nome,
+                    Descricao = projeto.Descricao,
+                    Ativo = projeto.Ativo
+
+                });
+                return Ok(resposta.ToList());
+
             }
             catch (Exception ex)
             {
@@ -50,8 +70,15 @@ namespace Projeto360.Api.Controllers
         {
             try
             {
-                var projeto = await _projetoAplicacao.Obter(id);
-                return Ok(projeto);
+                var projetos = await _projetoAplicacao.Obter(id);
+                var resposta = new ProjetoReposta()
+                {
+                    Id = projetos.Id,
+                    Nome = projetos.Nome,
+                    Descricao = projetos.Descricao,
+                    Ativo = projetos.Ativo
+                };
+                return Ok(resposta);
             }
             catch (Exception ex)
             {
@@ -60,12 +87,20 @@ namespace Projeto360.Api.Controllers
         }
 
         [HttpPut("Atualizar")]
-        public async Task<ActionResult> Atualizar([FromBody] Projeto projeto)
+        public async Task<ActionResult> Atualizar([FromBody] ProjetoAtualizar projeto)
         {
             try
             {
-                await _projetoAplicacao.Atualizar(projeto);
+                var projetoAtualizar = new Projeto()
+                {
+                    Id = projeto.Id,
+                    Nome = projeto.Nome,
+                    Descricao = projeto.Descricao
+                    
+                };
+                await _projetoAplicacao.Atualizar(projetoAtualizar);
                 return Ok();
+
             }
             catch (Exception ex)
             {
