@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Projeto360.Repositorio.Migrations
 {
     [DbContext(typeof(Projeto360Contexto))]
-    [Migration("20260824003128_CriacaoSprint")]
-    partial class CriacaoSprint
+    [Migration("20260909005546_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -5,28 +5,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Projeto360.Repositorio.Migrations
 {
-    public partial class CriacaoSprint : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Usuario",
-                table: "Usuario");
-
-            migrationBuilder.RenameTable(
-                name: "Usuario",
-                newName: "Usuarios");
-
-            migrationBuilder.AddColumn<int>(
-                name: "SprintId",
-                table: "Projeto",
-                type: "int",
-                nullable: true);
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Usuarios",
-                table: "Usuarios",
-                column: "UsuarioId");
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Ativo = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioId);
+                });
 
             migrationBuilder.CreateTable(
                 name: "Historias",
@@ -42,12 +39,22 @@ namespace Projeto360.Repositorio.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Historias", x => x.HistoriaId);
-                    table.ForeignKey(
-                        name: "FK_Historias_Projeto_ProjetoId",
-                        column: x => x.ProjetoId,
-                        principalTable: "Projeto",
-                        principalColumn: "ProjetoId",
-                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Projeto",
+                columns: table => new
+                {
+                    ProjetoId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ativo = table.Column<bool>(type: "bit", nullable: false),
+                    SprintId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Projeto", x => x.ProjetoId);
                 });
 
             migrationBuilder.CreateTable(
@@ -74,19 +81,27 @@ namespace Projeto360.Repositorio.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Projeto_SprintId",
-                table: "Projeto",
-                column: "SprintId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Historias_ProjetoId",
                 table: "Historias",
                 column: "ProjetoId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Projeto_SprintId",
+                table: "Projeto",
+                column: "SprintId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Sprints_ProjetoId",
                 table: "Sprints",
                 column: "ProjetoId");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Historias_Projeto_ProjetoId",
+                table: "Historias",
+                column: "ProjetoId",
+                principalTable: "Projeto",
+                principalColumn: "ProjetoId",
+                onDelete: ReferentialAction.Cascade);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Projeto_Sprints_SprintId",
@@ -99,35 +114,20 @@ namespace Projeto360.Repositorio.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Projeto_Sprints_SprintId",
-                table: "Projeto");
+                name: "FK_Sprints_Projeto_ProjetoId",
+                table: "Sprints");
 
             migrationBuilder.DropTable(
                 name: "Historias");
 
             migrationBuilder.DropTable(
+                name: "Usuarios");
+
+            migrationBuilder.DropTable(
+                name: "Projeto");
+
+            migrationBuilder.DropTable(
                 name: "Sprints");
-
-            migrationBuilder.DropIndex(
-                name: "IX_Projeto_SprintId",
-                table: "Projeto");
-
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Usuarios",
-                table: "Usuarios");
-
-            migrationBuilder.DropColumn(
-                name: "SprintId",
-                table: "Projeto");
-
-            migrationBuilder.RenameTable(
-                name: "Usuarios",
-                newName: "Usuario");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Usuario",
-                table: "Usuario",
-                column: "UsuarioId");
         }
     }
 }
