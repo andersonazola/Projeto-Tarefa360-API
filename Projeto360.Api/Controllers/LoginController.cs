@@ -16,16 +16,37 @@ namespace Projeto360.Api.Controllers
         }
 
         [HttpPost]
-        [Route("Login")]
+        [Route("")]
 
         public async Task<ActionResult> Login([FromBody] LoginRequisicao loginRequisicao)
         {
             try
             {
-                var usuarioLogin = _contexto.Usuarios.Where
-                    (usuario => usuario.Email == loginRequisicao.Email && usuario.Senha == loginRequisicao.Senha);
+                var usuarioLogin = new LoginRequisicao
+                {
+                    Email = loginRequisicao.Email, 
+                    Senha = loginRequisicao.Senha
+                };
 
-                return Ok();
+                var usuarioValidacao = _contexto.Usuarios.FirstOrDefault(usuario => usuario.Email == usuarioLogin.Email);
+
+                if (usuarioValidacao == null) 
+                { 
+                    return NotFound();
+                }
+
+                if (usuarioValidacao.Senha != usuarioLogin.Senha) 
+                { 
+                    return Unauthorized();
+                }
+
+                var usuarioResposta = new LoginResposta 
+                { 
+                    Nome = usuarioValidacao.Nome, 
+                    TipoUsuario = (int)usuarioValidacao.TipoUsuario 
+                }; 
+                
+                return Ok(usuarioResposta);
             }
             catch(Exception excecao)
             {
@@ -35,3 +56,4 @@ namespace Projeto360.Api.Controllers
         }
     }
 }
+
