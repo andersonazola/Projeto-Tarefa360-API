@@ -9,9 +9,9 @@ namespace Projeto360.Aplicacao.Interfaces;
 
 public interface ISprintAplicacao
 {
-            Task<int> Criar(Sprint sprint);
-        Task Atualizar(Sprint sprint);
-        Task Deletar(int sprintId);
-        Task<Sprint> Obter(int sprintId);
-        Task<IEnumerable<Sprint>> Listar(bool ativo);
+    Task<int> Criar(Sprint sprint);
+    Task Atualizar(Sprint sprint);
+    Task Deletar(int sprintId);
+    Task<Sprint> Obter(int sprintId);
+    Task<IEnumerable<Sprint>> Listar(bool ativo);
 }
