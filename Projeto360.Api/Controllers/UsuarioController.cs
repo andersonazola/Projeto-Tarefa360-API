@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Projeto360.Dominio.Entidades;
-using Projeto360.Dominio.Enumeradores;
 using Projeto360.Api.Models.Requisicao;
 using Projeto360.Api.Models.Resposta;
 using Projeto360.Aplicacao;
-using System.Runtime.Versioning;
 
-
+using Projeto360.Dominio.Enumeradores;
 
 
 
@@ -38,6 +36,7 @@ public class UsuarioController : ControllerBase
                 Id = usuarioDominio.ID,
                 Nome = usuarioDominio.Nome,
                 Email = usuarioDominio.Email,
+                TipoUsuario = usuarioDominio.TipoUsuario
             };
             return Ok(usuario);
         }
@@ -57,7 +56,8 @@ public class UsuarioController : ControllerBase
             {
                 Nome = usuario.Nome,
                 Email = usuario.Email,
-                Senha = usuario.Senha
+                Senha = usuario.Senha,
+                TipoUsuario = usuario.TipoUsuario
             };
             var usuarioID = await _usuarioAplicacao.Criar(usuarioDominio);
             return Ok(usuarioID);
@@ -69,20 +69,6 @@ public class UsuarioController : ControllerBase
         }
     }
 
-    [HttpPut]
-    [Route("PrimeiroAcesso")]
-    public async Task<ActionResult> PrimeiroAcesso ([FromBody] PrimeiroAcessoRequisicao requisicao)
-    {
-        try
-        {
-            await _usuarioAplicacao.TrocarSenhaPrimeiroAcesso(requisicao.UsuarioId, requisicao.NovaSenha);
-            return Ok();
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
 
 
     [HttpPut]
@@ -96,7 +82,8 @@ public class UsuarioController : ControllerBase
             {
                 ID = usuario.Id,
                 Nome = usuario.Nome,
-                Email = usuario.Email
+                Email = usuario.Email,
+                TipoUsuario = usuario.TipoUsuario
             };
             await _usuarioAplicacao.Atualizar(usuarioDominio);
 
@@ -172,8 +159,7 @@ public class UsuarioController : ControllerBase
             {
                 Id = usuario.ID,
                 Nome = usuario.Nome,
-                Email = usuario.Email,
-                PrecisaTrocarSenha = usuario.PrecisaTrocarSenha
+                Email = usuario.Email
             }).ToList();
 
             return Ok(usuarios);

@@ -1,5 +1,4 @@
 using Projeto360.Dominio.Entidades;
-using Projeto360.Entidades;
 
 namespace Projeto360.Repositorio.Interfaces
 {

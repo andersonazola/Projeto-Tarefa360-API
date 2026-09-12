@@ -12,8 +12,8 @@ public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
 
     public async Task<int> Salvar(Usuario usuario)
     {
-        await _contexto.Usuarios.AddAsync(usuario);
-        await _contexto.SaveChangesAsync();
+        _contexto.Usuarios.Add(usuario);
+        _contexto.SaveChanges();
         return usuario.ID;
     }
 

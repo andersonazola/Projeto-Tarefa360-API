@@ -47,7 +47,6 @@ builder.Services.AddControllers();
 // Adicionar o serviço de banco de dados
 builder.Services.AddDbContext<Projeto360Contexto>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("projetoDB")));
 
-
 // Saiba mais sobre a configuracão do Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
