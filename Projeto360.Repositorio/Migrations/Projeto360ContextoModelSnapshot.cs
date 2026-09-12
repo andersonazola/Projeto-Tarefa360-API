@@ -58,7 +58,7 @@ namespace Projeto360.Repositorio.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("Sprints");
+                        .HasColumnName("SprintId");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
@@ -66,12 +66,12 @@ namespace Projeto360.Repositorio.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("DataFim")
-                        .HasColumnType("datetime")
-                        .HasColumnName("Data Fim");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DataFim");
 
                     b.Property<DateTime>("DataInicio")
-                        .HasColumnType("datetime")
-                        .HasColumnName("Data Inicio");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DataInicio");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -190,7 +190,7 @@ namespace Projeto360.Repositorio.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Usuarios", (string)null);
+                    b.ToTable("Usuario", (string)null);
                 });
 
             modelBuilder.Entity("Projeto360.Entidades.Historia", b =>

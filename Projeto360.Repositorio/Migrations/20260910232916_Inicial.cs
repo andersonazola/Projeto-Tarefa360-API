@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Projeto360.Repositorio.Migrations
 {
-    public partial class AdicionaTabelaTarefas : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Usuarios",
+                name: "Usuario",
                 columns: table => new
                 {
                     UsuarioId = table.Column<int>(type: "int", nullable: false)
@@ -24,7 +24,7 @@ namespace Projeto360.Repositorio.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioId);
+                    table.PrimaryKey("PK_Usuario", x => x.UsuarioId);
                 });
 
             migrationBuilder.CreateTable(
@@ -64,17 +64,17 @@ namespace Projeto360.Repositorio.Migrations
                 name: "Sprints",
                 columns: table => new
                 {
-                    Sprints = table.Column<int>(type: "int", nullable: false)
+                    SprintId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    DataInicio = table.Column<DateTime>(name: "Data Inicio", type: "datetime", nullable: false),
-                    DataFim = table.Column<DateTime>(name: "Data Fim", type: "datetime", nullable: false),
+                    DataInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataFim = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Ativo = table.Column<bool>(type: "bit", nullable: false),
                     ProjetoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sprints", x => x.Sprints);
+                    table.PrimaryKey("PK_Sprints", x => x.SprintId);
                     table.ForeignKey(
                         name: "FK_Sprints_Projeto_ProjetoId",
                         column: x => x.ProjetoId,
@@ -116,12 +116,12 @@ namespace Projeto360.Repositorio.Migrations
                         name: "FK_Tarefas_Sprints_SprintId",
                         column: x => x.SprintId,
                         principalTable: "Sprints",
-                        principalColumn: "Sprints",
+                        principalColumn: "SprintId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Tarefas_Usuarios_UsuarioId",
+                        name: "FK_Tarefas_Usuario_UsuarioId",
                         column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
+                        principalTable: "Usuario",
                         principalColumn: "UsuarioId",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -174,7 +174,7 @@ namespace Projeto360.Repositorio.Migrations
                 table: "Projeto",
                 column: "SprintId",
                 principalTable: "Sprints",
-                principalColumn: "Sprints");
+                principalColumn: "SprintId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -190,7 +190,7 @@ namespace Projeto360.Repositorio.Migrations
                 name: "Historias");
 
             migrationBuilder.DropTable(
-                name: "Usuarios");
+                name: "Usuario");
 
             migrationBuilder.DropTable(
                 name: "Projeto");
