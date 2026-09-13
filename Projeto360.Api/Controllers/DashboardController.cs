@@ -26,9 +26,9 @@ namespace Projeto360.Api.Controllers
                 {
                     ProjetoId = resumo.ProjetoId,
 
-                    TotalTarefas      = resumo.TotalTarefas,
-                    TarefasConcluidas = resumo.TarefasConcluidas,
-                    TarefasAbertas    = resumo.TarefasAbertas,
+                    TotalHoras      = resumo.TotalHoras,
+                    HorasConcluidas = resumo.HorasConcluidas,
+                    HorasAbertas    = resumo.HorasAbertas,
 
                     TotalHistorias    = resumo.TotalHistorias,
                     HistoriasFechadas = resumo.HistoriasFechadas,
