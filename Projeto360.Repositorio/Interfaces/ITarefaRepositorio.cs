@@ -19,5 +19,6 @@ namespace Projeto360.Repositorio.Interfaces
         Task<int> ContarTotalBugs(int projetoId);
         Task<int> ContarBugsFechados(int projetoId);
         Task<int> ContarBugsAbertos(int projetoId);
+        Task<List<Tarefa>> ObterTarefasComSprintPorProjeto(int projetoId);
     }
 } 

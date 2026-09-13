@@ -95,4 +95,12 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         return await _contexto.Tarefas
             .CountAsync(t => t.ProjetoId == projetoId && t.TipoTarefas == TiposTarefas.Bug && t.Concluida == false);
     }
+
+    public async Task<List<Tarefa>> ObterTarefasComSprintPorProjeto(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .Include(t => t.Sprint)
+            .Where(t => t.ProjetoId == projetoId && t.Ativa)
+            .ToListAsync();
+    }
 }
