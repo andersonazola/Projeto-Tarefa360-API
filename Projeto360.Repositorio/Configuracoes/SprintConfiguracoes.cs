@@ -17,6 +17,12 @@ public class SprintConfiguracoes : IEntityTypeConfiguration<Sprint>
         builder.Property(sprint => sprint.DataInicio).HasColumnName("DataInicio").IsRequired(true);
         builder.Property(sprint => sprint.DataFim).HasColumnName("DataFim").IsRequired(true);
 
+        builder.Property(sprint => sprint.HorasSprint)
+        .HasColumnName("HorasSprint")
+            .HasColumnName("HorasSprint")
+            .HasColumnType("int")
+            .IsRequired(true);
+
         builder
         .HasOne(sprint => sprint.Projeto)
         .WithMany()
