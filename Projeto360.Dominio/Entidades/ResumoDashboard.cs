@@ -4,10 +4,10 @@ namespace Projeto360.Dominio.Entidades
     {
         public int ProjetoId {get; set;}
 
-        //Indicadores de Tarefas
-        public int TotalTarefas {get; set;}
-        public int TarefasConcluidas {get; set;}
-        public int TarefasAbertas {get; set;}
+        //Indicadores de Horas
+            public int TotalHoras {get; set;}
+            public int HorasConcluidas {get; set;}
+            public int HorasAbertas {get; set;}
 
         //Indicadores de Historias
         public int TotalHistorias {get; set;}
