@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Projeto360.Api.Models.Requisicao;
+using Projeto360.Dominio.Entidades;
+using Tarefa360.Aplicacao.Interfaces;
 
 namespace Projeto360.Api.Controllers
 {
@@ -8,27 +10,25 @@ namespace Projeto360.Api.Controllers
 
     public class LoginController : ControllerBase
     {
-        private readonly Projeto360Contexto _contexto;
+        private readonly ILoginAplicacao _loginAplicacao;
 
-        public LoginController(Projeto360Contexto contexto)
+        public LoginController(ILoginAplicacao loginAplicacao)
         {
-            _contexto = contexto;
+            _loginAplicacao = loginAplicacao;
         }
 
-        [HttpPost]
-        [Route("")]
-
+        [HttpPost("")]
         public async Task<ActionResult> Login([FromBody] LoginRequisicao loginRequisicao)
         {
             try
             {
-                var usuarioLogin = new LoginRequisicao
+                var usuarioLogin = new Usuario
                 {
                     Email = loginRequisicao.Email, 
                     Senha = loginRequisicao.Senha
                 };
 
-                var usuarioValidacao = _contexto.Usuarios.FirstOrDefault(usuario => usuario.Email == usuarioLogin.Email);
+                var usuarioValidacao = await _loginAplicacao.Login(usuarioLogin);
 
                 if (usuarioValidacao == null) 
                 { 
