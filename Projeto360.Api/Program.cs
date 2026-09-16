@@ -4,6 +4,7 @@ using Projeto360.Aplicacao;
 using Projeto360.Aplicacao.Interfaces;
 using Projeto360.Repositorio;
 using Projeto360.Repositorio.Interfaces;
+using Tarefa360.Aplicacao.Interfaces;
 
 
 
@@ -16,6 +17,7 @@ builder.Services.AddScoped<IProjetoAplicacao, ProjetoAplicacao>();
 builder.Services.AddScoped<IHistoriaAplicacao, HistoriaAplicacao>();
 builder.Services.AddScoped<ISprintAplicacao, SprintAplicacao>();
 builder.Services.AddScoped<IDashboardAplicacao, DashboardAplicacao>();
+builder.Services.AddScoped<ILoginAplicacao, LoginAplicacao>();
 
 
 // Adicione as interfaces de banco de dados
