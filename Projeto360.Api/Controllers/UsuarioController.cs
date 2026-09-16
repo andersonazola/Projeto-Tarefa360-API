@@ -159,7 +159,8 @@ public class UsuarioController : ControllerBase
             {
                 Id = usuario.ID,
                 Nome = usuario.Nome,
-                Email = usuario.Email
+                Email = usuario.Email,
+                TipoUsuario = usuario.TipoUsuario
             }).ToList();
 
             return Ok(usuarios);
