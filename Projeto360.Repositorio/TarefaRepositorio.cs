@@ -29,6 +29,7 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
     public async Task Deletar(Tarefa tarefa)
     {
         tarefa.Ativa = false;
+        tarefa.Concluida = true;
         _contexto.Tarefas.Update(tarefa);
         await _contexto.SaveChangesAsync();
     }
