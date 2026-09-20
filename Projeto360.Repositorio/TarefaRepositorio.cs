@@ -29,6 +29,7 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
     public async Task Deletar(Tarefa tarefa)
     {
         tarefa.Ativa = false;
+        tarefa.Concluida = true;
         _contexto.Tarefas.Update(tarefa);
         await _contexto.SaveChangesAsync();
     }
@@ -94,5 +95,13 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
     {
         return await _contexto.Tarefas
             .CountAsync(t => t.ProjetoId == projetoId && t.TipoTarefas == TiposTarefas.Bug && t.Concluida == false);
+    }
+
+    public async Task<List<Tarefa>> ObterTarefasComSprintPorProjeto(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .Include(t => t.Sprint)
+            .Where(t => t.ProjetoId == projetoId && t.Ativa)
+            .ToListAsync();
     }
 }
