@@ -129,5 +129,31 @@ namespace Projeto360.Api.Controllers
                 return BadRequest (excecao.Message);
             }
         }
+
+        [HttpGet]
+        [Route("Busca")]
+        public async Task<ActionResult> Busca(string filtro)
+        {
+            try
+            {
+                var retornoBusca = await _sprintAplicacao.Busca(filtro);
+                var sprintsBusca = retornoBusca.Select(sprint => new SprintResposta()
+                {
+                    Id = sprint.Id,
+                    Nome = sprint.Nome,
+                    NomeProjeto = sprint.Projeto.Nome,
+                    ProjetoId = sprint.ProjetoId,
+                    DataInicio = sprint.DataInicio,
+                    DataFim = sprint.DataFim
+                    
+                }).ToList();
+
+                return Ok(sprintsBusca);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }   
