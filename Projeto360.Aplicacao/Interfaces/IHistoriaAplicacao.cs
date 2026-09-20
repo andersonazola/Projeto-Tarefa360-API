@@ -14,5 +14,6 @@ namespace Projeto360.Aplicacao.Interfaces
         Task Deletar(int historiaId);
         Task<Historia> Obter(int historiaId);
         Task<IEnumerable<Historia>> Listar(bool ativo);
+        Task<IEnumerable<Historia>> Busca(string filtro, bool ativo = true);
     }
 }

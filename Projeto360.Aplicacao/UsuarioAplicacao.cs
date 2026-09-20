@@ -25,10 +25,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         if (string.IsNullOrEmpty(usuario.Senha))
             throw new Exception("Senha não pode ser vázia");
 
-        if (usuario.Senha.Length < 6)    
-            throw new Exception ("A senha temporária deve ter no mínimo 6 caracteres.");
+        if (usuario.Senha.Length < 6)
+            throw new Exception("A senha temporária deve ter no mínimo 6 caracteres.");
 
-        
+
 
         return await _usuarioRepositorio.Salvar(usuario);
     }
@@ -128,6 +128,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         return await _usuarioRepositorio.Listar(ativo);
     }
 
+    public async Task<IEnumerable<Usuario>> Busca(string filtro, bool ativo = true)
+    {
+        return await _usuarioRepositorio.Busca(filtro, ativo);
+    }
 
     #region  Util
     private static void ValidarInformacoesUsuario(Usuario usuario)

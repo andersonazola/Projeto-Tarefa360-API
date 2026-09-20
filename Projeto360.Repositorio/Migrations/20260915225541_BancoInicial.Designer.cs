@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Projeto360.Repositorio.Migrations
 {
     [DbContext(typeof(Projeto360Contexto))]
-    [Migration("20260910232916_Inicial")]
-    partial class Inicial
+    [Migration("20260915225541_BancoInicial")]
+    partial class BancoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

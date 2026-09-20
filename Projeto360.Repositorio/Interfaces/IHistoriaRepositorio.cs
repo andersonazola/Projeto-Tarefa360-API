@@ -9,7 +9,8 @@ namespace Projeto360.Repositorio.Interfaces
         Task Atualizar(Historia historia);
         Task<Historia> Obter(int historiaId);
         Task Deletar(Historia historia);
-        Task<IEnumerable<Historia>> Listar(bool ativo);        
+        Task<IEnumerable<Historia>> Listar(bool ativo);  
+        Task<IEnumerable<Historia>> Busca(string filtro, bool ativo = true);      
         Task <int> ContarTotalHistorias(int projetoId); // Método para o Dashboard
         Task <int> ContarHistoriasFechadas(int projetoId); // Método para o Dashboard
         Task <int> ContarHistoriasAbertas(int projetoId); // Método para o Dashboard

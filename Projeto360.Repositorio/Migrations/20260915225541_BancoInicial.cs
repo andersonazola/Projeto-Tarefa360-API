@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Projeto360.Repositorio.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class BancoInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
