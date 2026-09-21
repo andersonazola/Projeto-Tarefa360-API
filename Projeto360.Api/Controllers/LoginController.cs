@@ -24,35 +24,32 @@ namespace Projeto360.Api.Controllers
             {
                 var usuarioLogin = new Usuario
                 {
-                    Email = loginRequisicao.Email, 
+                    Email = loginRequisicao.Email,
                     Senha = loginRequisicao.Senha
                 };
 
                 var usuarioValidacao = await _loginAplicacao.Login(usuarioLogin);
 
-                if (usuarioValidacao == null) 
-                { 
-                    return NotFound();
-                }
+                var usuarioResposta = new LoginResposta
+                {
+                    Id = usuarioValidacao.ID,
+                    Nome = usuarioValidacao.Nome,
+                    TipoUsuario = (int)usuarioValidacao.TipoUsuario
+                };
 
-                if (usuarioValidacao.Senha != usuarioLogin.Senha) 
-                { 
-                    return Unauthorized();
-                }
-
-                var usuarioResposta = new LoginResposta 
-                { 
-                    Nome = usuarioValidacao.Nome, 
-                    TipoUsuario = (int)usuarioValidacao.TipoUsuario 
-                }; 
-                
                 return Ok(usuarioResposta);
             }
-            catch(Exception excecao)
+            catch (UnauthorizedAccessException excessao)
             {
-                return BadRequest(excecao.Message); 
+                return Unauthorized(excessao.Message);
             }
-            
+
+
+            catch (Exception excecao)
+            {
+                return BadRequest(excecao.Message);
+            }
+
         }
     }
 }

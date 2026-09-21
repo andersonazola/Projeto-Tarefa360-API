@@ -6,12 +6,12 @@ namespace Projeto360.Aplicacao;
 
 public interface IUsuarioAplicacao
 {
-    Task<int> Criar(Usuario usuarioDTO);
-    Task AlterarSenha(Usuario usuarioDTO, string senhaAntiga);
-    Task Atualizar(Usuario usuarioDTO);
-    Task Deletar(int usuarioId);
-    Task Restaurar(int usuarioId);
-    Task<IEnumerable<Usuario>> Listar(bool ativo);
-    Task<Usuario> Obter(int usuarioId);
-    Task<Usuario> ObterPorEmail(string email);
+    Task<int> Criar(Usuario usuarioDTOm, int usuarioLoginId);
+    Task AlterarSenha(Usuario usuarioDTO, string senhaAntiga, int usuarioLoginId);
+    Task Atualizar(Usuario usuarioDTO, int usuarioLoginId);
+    Task Deletar(int usuarioId, int usuarioLoginId);
+    Task Restaurar(int usuarioId, int usuarioLoginId);
+    Task<IEnumerable<Usuario>> Listar(bool ativo, int usuarioLoginId);
+    Task<Usuario> Obter(int usuarioId, int usuarioLoginId);
+    Task<Usuario> ObterPorEmail(string email, int usuarioLoginId);
 }
