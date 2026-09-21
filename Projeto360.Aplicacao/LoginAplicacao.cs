@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Projeto360.Dominio.Entidades;
 using Projeto360.Repositorio;
@@ -17,15 +18,19 @@ namespace Projeto360.Aplicacao
 
         public async Task<Usuario> Login(Usuario usuarioLogin)
         {
-            var usuario = new Usuario
+            var usuario = await _usuarioRepositorio.ObterEmail(usuarioLogin.Email);
+
+            if(usuario == null)
             {
-                Email = usuarioLogin.Email,
-                Senha = usuarioLogin.Senha
-            };
+                throw new ArgumentException("Usuario não encontrado");
+            }
 
-            var usuarioValidacao = _usuarioRepositorio.ObterEmail(usuario.Email);
+            if(usuario.Senha != usuarioLogin.Senha)
+            {
+                throw new UnauthorizedAccessException("Senha incorreta");
+            }
 
-            return await usuarioValidacao;
+            return usuario;
         }
     }
 }

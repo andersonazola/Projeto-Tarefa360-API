@@ -26,11 +26,11 @@ public class UsuarioController : ControllerBase
 
     [HttpGet]
     [Route("obter/{usuarioId}")]
-    public async Task<ActionResult> Obter([FromRoute] int usuarioId)
+    public async Task<ActionResult> Obter([FromRoute] int usuarioId, [FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
     {
         try
         {
-            var usuarioDominio = await _usuarioAplicacao.Obter(usuarioId);
+            var usuarioDominio = await _usuarioAplicacao.Obter(usuarioId, usuarioLoginId);
             var usuario = new UsuarioResposta()
             {
                 Id = usuarioDominio.ID,
@@ -40,6 +40,10 @@ public class UsuarioController : ControllerBase
             };
             return Ok(usuario);
         }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(ex.Message);
+        }
         catch (Exception ex)
         {
             return BadRequest(ex.Message);
@@ -48,7 +52,7 @@ public class UsuarioController : ControllerBase
 
     [HttpPost]
     [Route("Criar")]
-    public async Task<ActionResult> Criar([FromBody] UsuarioCriar usuario)
+    public async Task<ActionResult> Criar([FromBody] UsuarioCriar usuario, [FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
     {
         try
         {
@@ -59,9 +63,13 @@ public class UsuarioController : ControllerBase
                 Senha = usuario.Senha,
                 TipoUsuario = usuario.TipoUsuario
             };
-            var usuarioID = await _usuarioAplicacao.Criar(usuarioDominio);
+            var usuarioID = await _usuarioAplicacao.Criar(usuarioDominio, usuarioLoginId);
             return Ok(usuarioID);
 
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(ex.Message);
         }
         catch (Exception ex)
         {
@@ -74,7 +82,7 @@ public class UsuarioController : ControllerBase
     [HttpPut]
     [Route("Atualizar")]
 
-    public async Task<ActionResult> Atualizar([FromBody] UsuarioAtualizar usuario)
+    public async Task<ActionResult> Atualizar([FromBody] UsuarioAtualizar usuario, [FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
     {
         try
         {
@@ -85,9 +93,13 @@ public class UsuarioController : ControllerBase
                 Email = usuario.Email,
                 TipoUsuario = usuario.TipoUsuario
             };
-            await _usuarioAplicacao.Atualizar(usuarioDominio);
+            await _usuarioAplicacao.Atualizar(usuarioDominio, usuarioLoginId);
 
             return Ok();
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(ex.Message);
         }
         catch (Exception ex)
         {
@@ -97,7 +109,7 @@ public class UsuarioController : ControllerBase
 
     [HttpPut]
     [Route("AlterarSenha")]
-    public async Task<ActionResult> AlterarSenha([FromBody] UsuarioAlterarSenha usuario)
+    public async Task<ActionResult> AlterarSenha([FromBody] UsuarioAlterarSenha usuario, [FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
     {
         try
         {
@@ -106,9 +118,13 @@ public class UsuarioController : ControllerBase
                 ID = usuario.Id,
                 Senha = usuario.Senha
             };
-            await _usuarioAplicacao.AlterarSenha(usuarioDominio, usuario.SenhaAntiga);
+            await _usuarioAplicacao.AlterarSenha(usuarioDominio, usuario.SenhaAntiga, usuarioLoginId);
 
             return Ok();
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(ex.Message);
         }
         catch (Exception ex)
         {
@@ -118,13 +134,17 @@ public class UsuarioController : ControllerBase
 
     [HttpDelete]
     [Route("Deletar/{usuarioId}")]
-    public async Task<ActionResult> Deletar([FromRoute] int usuarioId)
+    public async Task<ActionResult> Deletar([FromRoute] int usuarioId, [FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
     {
         try
         {
-            await _usuarioAplicacao.Deletar(usuarioId);
+            await _usuarioAplicacao.Deletar(usuarioId, usuarioLoginId);
 
             return Ok();
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(ex.Message);
         }
         catch (Exception ex)
         {
@@ -134,13 +154,17 @@ public class UsuarioController : ControllerBase
 
     [HttpPut]
     [Route("Restaurar/{usuarioId}")]
-    public async Task<ActionResult> Restaurar([FromRoute] int usuarioId)
+    public async Task<ActionResult> Restaurar([FromRoute] int usuarioId, [FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
     {
         try
         {
-            await _usuarioAplicacao.Restaurar(usuarioId);
+            await _usuarioAplicacao.Restaurar(usuarioId, usuarioLoginId);
 
             return Ok();
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(ex.Message);
         }
         catch (Exception ex)
         {
@@ -150,11 +174,11 @@ public class UsuarioController : ControllerBase
 
     [HttpGet]
     [Route("Listar")]
-    public async Task<ActionResult> List([FromQuery] bool ativos)
+    public async Task<ActionResult> Listar([FromQuery] bool ativos, [FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
     {
         try
         {
-            var usuarioDominio = await _usuarioAplicacao.Listar(ativos);
+            var usuarioDominio = await _usuarioAplicacao.Listar(ativos, usuarioLoginId);
             var usuarios = usuarioDominio.Select(usuario => new UsuarioResposta()
             {
                 Id = usuario.ID,
@@ -165,6 +189,10 @@ public class UsuarioController : ControllerBase
 
             return Ok(usuarios);
 
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Unauthorized(ex.Message);
         }
         catch (Exception ex)
         {

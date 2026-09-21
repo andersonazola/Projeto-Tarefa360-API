@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Projeto360.Dominio.Entidades;
+using Projeto360.Dominio.Enumeradores;
 
 namespace Projeto360.Aplicacao;
 
@@ -15,8 +16,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
     }
 
 
-    public async Task<int> Criar(Usuario usuario)
+    public async Task<int> Criar(Usuario usuario, int usuarioLoginId)
     {
+        await ValidarPermissaoAdmin(usuarioLoginId);
+
         if (usuario == null)
             throw new Exception("Usuário não pode ser vazio");
 
@@ -34,8 +37,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
     }
 
 
-    public async Task Atualizar(Usuario usuario)
+    public async Task Atualizar(Usuario usuario, int usuarioLoginId)
     {
+        await ValidarPermissaoAdmin(usuarioLoginId);
+
         var usuarioDominio = await _usuarioRepositorio.Obter(usuario.ID);
 
         if (usuarioDominio == null)
@@ -65,8 +70,9 @@ public class UsuarioAplicacao : IUsuarioAplicacao
     }
 
 
-    public async Task AlterarSenha(Usuario usuario, string senhaAntiga)
+    public async Task AlterarSenha(Usuario usuario, string senhaAntiga, int usuarioLoginId)
     {
+        await ValidarPermissaoAdmin(usuarioLoginId);
         var usuarioDominio = await _usuarioRepositorio.Obter(usuario.ID);
 
         if (usuarioDominio == null)
@@ -80,8 +86,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         await _usuarioRepositorio.Atualizar(usuarioDominio);
     }
 
-    public async Task<Usuario> Obter(int usuarioId)
+    public async Task<Usuario> Obter(int usuarioId, int usuarioLoginId)
     {
+        await ValidarPermissaoAdmin(usuarioLoginId);
+
         var usuarioDominio = await _usuarioRepositorio.Obter(usuarioId);
 
         if (usuarioDominio == null)
@@ -91,8 +99,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
     }
 
 
-    public async Task<Usuario> ObterPorEmail(string email)
+    public async Task<Usuario> ObterPorEmail(string email, int usuarioLoginId)
     {
+        await ValidarPermissaoAdmin(usuarioLoginId);
+
         var usuarioDominio = await _usuarioRepositorio.ObterEmail(email);
 
         if (usuarioDominio == null)
@@ -101,8 +111,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         return usuarioDominio;
     }
 
-    public async Task Deletar(int usuarioId)
+    public async Task Deletar(int usuarioId, int usuarioLoginId)
     {
+        await ValidarPermissaoAdmin(usuarioLoginId);
+
         var usuarioDominio = await _usuarioRepositorio.Obter(usuarioId);
 
         if (usuarioDominio == null)
@@ -112,8 +124,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         await _usuarioRepositorio.Atualizar(usuarioDominio);
     }
 
-    public async Task Restaurar(int usuarioId)
+    public async Task Restaurar(int usuarioId, int usuarioLoginId)
     {
+        await ValidarPermissaoAdmin(usuarioLoginId);
+
         var usuarioDominio = await _usuarioRepositorio.ObterPorId(usuarioId);
 
         if (usuarioDominio == null)
@@ -123,8 +137,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         await _usuarioRepositorio.Atualizar(usuarioDominio);
     }
 
-    public async Task<IEnumerable<Usuario>> Listar(bool ativo)
+    public async Task<IEnumerable<Usuario>> Listar(bool ativo, int usuarioId)
     {
+        await ValidarPermissaoAdmin(usuarioId);
+
         return await _usuarioRepositorio.Listar(ativo);
     }
 
@@ -142,6 +158,19 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         if (string.IsNullOrEmpty(usuario.Email))
             throw new Exception("E-mail não pode ser vazio");
     }
+
+
+    private async Task ValidarPermissaoAdmin(int usuarioId)
+    {
+        var usuarioLogin = await _usuarioRepositorio.Obter(usuarioId);
+
+        if (usuarioLogin == null)
+            throw new ArgumentException("Usuario não encontrado");
+
+        if (usuarioLogin.TipoUsuario != TiposUsuarios.Admin)
+            throw new UnauthorizedAccessException("Acesso restrito a administradores");
+    }
+
 
     #endregion
 }
