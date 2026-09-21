@@ -13,5 +13,7 @@ namespace Projeto360.Repositorio.Interfaces
         Task Deletar (Sprint sprint);
 
         Task <IEnumerable<Sprint>> Listar (bool ativo);
+        
+        Task<IEnumerable<Sprint>> Busca(string filtro, bool ativo = true);
     }
 }

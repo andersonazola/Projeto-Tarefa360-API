@@ -25,7 +25,7 @@ namespace Projeto360.Aplicacao
             if (string.IsNullOrEmpty(projeto.Nome))
                 throw new Exception("Nome do projeto é obrigatório!");
 
-            return await _projetoRepositorio.Salvar(projeto);    
+            return await _projetoRepositorio.Salvar(projeto);
         }
 
         public async Task Atualizar(Projeto projeto)
@@ -61,6 +61,11 @@ namespace Projeto360.Aplicacao
         public async Task<IEnumerable<Projeto>> Listar(bool ativo = true)
         {
             return await _projetoRepositorio.Listar(ativo);
+        }
+
+        public async Task<IEnumerable<Projeto>> Busca(string filtro, bool ativo = true)
+        {
+            return await _projetoRepositorio.Busca(filtro, ativo);
         }
     }
 }

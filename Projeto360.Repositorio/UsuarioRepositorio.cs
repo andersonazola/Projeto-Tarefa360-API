@@ -47,5 +47,18 @@ public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
         return await _contexto.Usuarios.Where(U => U.Ativo == ativo).ToListAsync();
     }
 
+    public async Task<IEnumerable<Usuario>> Busca(string filtro, bool ativo = true)
+    {
+        var resultadoBusca = _contexto.Usuarios.Where(usuario => usuario.Ativo == ativo);
 
+        if (!string.IsNullOrWhiteSpace(filtro))
+        {
+            var filtroLower = filtro.ToLower();
+            resultadoBusca = resultadoBusca.Where(usuario =>
+                usuario.Nome.ToLower().Contains(filtroLower) || usuario.Email.ToLower().Contains(filtroLower)
+            );
+        }
+
+        return await resultadoBusca.ToListAsync();
+    }
 }

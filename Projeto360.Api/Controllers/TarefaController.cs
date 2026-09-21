@@ -37,7 +37,7 @@ namespace Projeto360.Api.Controllers
                     HistoriaId = tarefa.HistoriaId,
                     SprintId = tarefa.SprintId,
                     UsuarioId = tarefa.UsuarioId
-                    
+
                 };
 
                 var tarefaId = await _tarefaAplicacao.Criar(tarefaDominio);
@@ -214,6 +214,40 @@ namespace Projeto360.Api.Controllers
                 await _tarefaAplicacao.Deletar(id);
                 return Ok();
 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("Busca")]
+        public async Task<ActionResult> Busca(string filtro)
+        {
+            try
+            {
+                var retornoBusca = await _tarefaAplicacao.Busca(filtro);
+                var tarefasBusca = retornoBusca.Select(tarefa => new TarefaResposta()
+                {
+                    Id = tarefa.ID,
+                    Nome = tarefa.Nome,
+                    Descricao = tarefa.Descricao,
+                    NomeProjeto = tarefa.Projeto.Nome,
+                    TiposTarefas = tarefa.TipoTarefas,
+                    Concluida = tarefa.Concluida,
+                    Ativa = tarefa.Ativa,
+                    ProjetoId = tarefa.ProjetoId,
+                    HistoriaId = tarefa.HistoriaId,
+                    NomeHistoria = tarefa.Historia.Nome,
+                    SprintId = tarefa.SprintId,
+                    NomeSprint = tarefa.Sprint.Nome,
+                    NomeUsuario = tarefa.Usuario.Nome,
+                    UsuarioId = tarefa.UsuarioId
+
+                }).ToList();
+
+                return Ok(tarefasBusca);
             }
             catch (Exception ex)
             {

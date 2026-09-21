@@ -48,6 +48,22 @@ namespace Projeto360.Repositorio
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Historia>> Busca(string filtro, bool ativo = true)
+        {
+            var resultadoBusca = _contexto.Historias.Where(historia => historia.Ativo == ativo);
+
+            if (!string.IsNullOrWhiteSpace(filtro))
+            {
+                var filtroLower = filtro.ToLower();
+                resultadoBusca = resultadoBusca.Where(historia =>
+                    historia.Nome.ToLower().Contains(filtroLower) || historia.Descricao.ToLower().Contains(filtroLower)
+                    || historia.Projeto.Nome.ToLower().Contains(filtroLower)
+                );
+            }
+
+           return await resultadoBusca.Include(historia => historia.Projeto).ToListAsync();
+        }
+
         //Conta todas as histórias ativas de um projeto
         public async Task <int> ContarTotalHistorias(int projetoId)
         {

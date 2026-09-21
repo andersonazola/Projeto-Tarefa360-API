@@ -45,6 +45,26 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         .ToListAsync();
     }
 
+    public async Task<IEnumerable<Tarefa>> Busca(string filtro, bool ativo = true)
+    {
+        var resultadoBusca = _contexto.Tarefas.Where(tarefa => tarefa.Ativa == ativo);
+
+        if (!string.IsNullOrWhiteSpace(filtro))
+        {
+            var filtroLower = filtro.ToLower();
+            resultadoBusca = resultadoBusca.Where(tarefa =>
+                tarefa.Nome.ToLower().Contains(filtroLower) || tarefa.Descricao.ToLower().Contains(filtroLower)
+            );
+        }
+
+        return await resultadoBusca
+            .Include(tarefa => tarefa.Usuario)
+            .Include(tarefa => tarefa.Projeto)
+            .Include(tarefa => tarefa.Sprint)
+            .Include(tarefa => tarefa.Historia)
+            .ToListAsync();
+    }
+
     public async Task<Tarefa> Obter(int tarefaId)
     {
         return await _contexto.Tarefas
@@ -61,7 +81,7 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         await _contexto.SaveChangesAsync();
     }
 
-    public async Task <int> ContarTotalTarefas (int projetoId)
+    public async Task<int> ContarTotalTarefas(int projetoId)
     {
         return await _contexto.Tarefas
             .CountAsync(t => t.ProjetoId == projetoId);

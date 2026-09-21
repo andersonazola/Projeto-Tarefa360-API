@@ -47,5 +47,20 @@ namespace Projeto360.Repositorio
             .Include(sprint => sprint.Projeto)
             .ToListAsync();
         }
+
+        public async Task<IEnumerable<Sprint>> Busca(string filtro, bool ativo = true)
+        {
+            var resultadoBusca = _contexto.Sprints.Where(sprint => sprint.Ativo == ativo);
+
+            if (!string.IsNullOrWhiteSpace(filtro))
+            {
+                var filtroLower = filtro.ToLower();
+                resultadoBusca = resultadoBusca.Where(sprint =>
+                    sprint.Nome.ToLower().Contains(filtroLower) || sprint.Projeto.Nome.ToLower().Contains(filtroLower)
+                );
+            }
+
+           return await resultadoBusca.Include(sprint => sprint.Projeto).ToListAsync();
+        }
     }
 }

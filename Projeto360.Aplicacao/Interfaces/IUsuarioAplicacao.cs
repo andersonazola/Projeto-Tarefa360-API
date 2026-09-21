@@ -14,4 +14,5 @@ public interface IUsuarioAplicacao
     Task<IEnumerable<Usuario>> Listar(bool ativo);
     Task<Usuario> Obter(int usuarioId);
     Task<Usuario> ObterPorEmail(string email);
+    Task<IEnumerable<Usuario>> Busca(string filtro, bool ativo = true);
 }

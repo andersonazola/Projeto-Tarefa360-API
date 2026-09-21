@@ -11,6 +11,7 @@ namespace Projeto360.Repositorio.Interfaces
         Task Deletar(Tarefa tarefa);
         Task<IEnumerable<Tarefa>> Listar(bool? concluida);
         Task ConcluirTarefa (Tarefa tarefa);
+        Task<IEnumerable<Tarefa>> Busca(string filtro, bool ativo = true);
 
         //Métodos para o Dashboard
         Task <int> ContarTotalTarefas(int projetoId);
