@@ -75,5 +75,10 @@ namespace Projeto360.Aplicacao
         {
             return await _historiaRepositorio.Listar(ativo);
         }
+
+        public async Task<IEnumerable<Historia>> Busca(string filtro, bool ativo = true)
+        {
+            return await _historiaRepositorio.Busca(filtro, ativo);
+        }
     }
 }

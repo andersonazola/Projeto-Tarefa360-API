@@ -13,6 +13,8 @@ public class Sprint
 
     public bool Ativo { get; set; } 
 
+    public int HorasSprint {get; set;}
+
     public List <Projeto> Projetos {get; set;}
 
     public Projeto Projeto {get; set;}

@@ -31,15 +31,54 @@ namespace Projeto360.Aplicacao
             var resumo = new ResumoDashboard();
             resumo.ProjetoId = projetoId;
 
+            //Busca tarefas ativas com as respectivas Sprints
+            var tarefas = await _tarefaRepositorio.ObterTarefasComSprintPorProjeto(projetoId);
+
+            int totalHoras = 0;
+            int horasConcluidas = 0;
+            int horasAbertas = 0;
+
+            // Foreach percorrendo cada tarefa
+            foreach (var tarefa in tarefas)
+            {
+                if (tarefa.Sprint != null && tarefa.Sprint.DataInicio != DateTime.MinValue && tarefa.Sprint.DataFim != DateTime.MinValue)
+                {
+                    int diasUteis = 0;
+
+                    //Percorre dia a dia da Sprint
+                    for (var data = tarefa.Sprint.DataInicio.Date; data <= tarefa.Sprint.DataFim.Date; data = data.AddDays(1))
+                    {
+                        //Verifica se o dia é útil (segunda a sexta-feira)
+                        if (data.DayOfWeek != DayOfWeek.Saturday && data.DayOfWeek != DayOfWeek.Sunday)
+                        {
+                            diasUteis++;
+                        }
+                    }
+
+                    // Cada dia útil equivale a 8 horas
+                    int horasDaTarefa = diasUteis * 8;
+
+                    if (tarefa.Concluida)
+                    {
+                        horasConcluidas += horasDaTarefa;
+                    }
+                    else
+                    {
+                        horasAbertas += horasDaTarefa;
+                    }
+
+                    totalHoras += horasDaTarefa;                    
+                }
+            }
+
+            resumo.TotalHoras = totalHoras;
+            resumo.HorasConcluidas = horasConcluidas;
+            resumo.HorasAbertas = horasAbertas;
+
             // Busca dados de Histórias
             resumo.TotalHistorias    = await _historiaRepositorio.ContarTotalHistorias(projetoId);
             resumo.HistoriasFechadas = await _historiaRepositorio.ContarHistoriasFechadas(projetoId);
-            resumo.HistoriasAbertas  = await _historiaRepositorio.ContarHistoriasAbertas(projetoId);
-
-            // Busca dados de Tarefas
-            resumo.TotalTarefas      = await _tarefaRepositorio.ContarTotalTarefas(projetoId);
-            resumo.TarefasConcluidas = await _tarefaRepositorio.ContarTarefasConcluidas(projetoId);
-            resumo.TarefasAbertas    = await _tarefaRepositorio.ContarTarefasAbertas(projetoId);
+            resumo.HistoriasAbertas  = await _historiaRepositorio.ContarHistoriasAbertas(projetoId);           
 
             // Busca dados de Bugs
             resumo.TotalBugs    = await _tarefaRepositorio.ContarTotalBugs(projetoId);

@@ -144,6 +144,10 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         return await _usuarioRepositorio.Listar(ativo);
     }
 
+    public async Task<IEnumerable<Usuario>> Busca(string filtro, bool ativo = true)
+    {
+        return await _usuarioRepositorio.Busca(filtro, ativo);
+    }
 
     #region  Util
     private static void ValidarInformacoesUsuario(Usuario usuario)

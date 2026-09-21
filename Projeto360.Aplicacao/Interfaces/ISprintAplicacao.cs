@@ -14,4 +14,5 @@ public interface ISprintAplicacao
     Task Deletar(int sprintId);
     Task<Sprint> Obter(int sprintId);
     Task<IEnumerable<Sprint>> Listar(bool ativo);
+    Task<IEnumerable<Sprint>> Busca(string filtro, bool ativo = true);
 }

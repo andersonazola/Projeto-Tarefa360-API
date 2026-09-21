@@ -8,7 +8,7 @@ namespace Projeto360.Repositorio
     {
         public ProjetoRepositorio(Projeto360Contexto contexto) : base(contexto)
         {
-            
+
         }
 
         public async Task<int> Salvar(Projeto projeto)
@@ -30,11 +30,27 @@ namespace Projeto360.Repositorio
             .FirstOrDefaultAsync(p => p.Id == projetoId && p.Ativo);
         }
 
-        public async Task<IEnumerable<Projeto>> Listar (bool ativo = true)
+        public async Task<IEnumerable<Projeto>> Listar(bool ativo = true)
         {
             return await _contexto.Projetos
             .Where(p => p.Ativo == ativo)
             .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Projeto>> Busca(string filtro, bool ativo = true)
+        {
+            var resultadoBusca = _contexto.Projetos.Where(projeto => projeto.Ativo == ativo);
+
+            if (!string.IsNullOrWhiteSpace(filtro))
+            {
+                var filtroLower = filtro.ToLower();
+                resultadoBusca = resultadoBusca.Where(projeto =>
+                    projeto.Nome.ToLower().Contains(filtroLower) ||
+                    projeto.Descricao.ToLower().Contains(filtroLower)
+                );
+            }
+
+            return await resultadoBusca.ToListAsync();
         }
     }
 }

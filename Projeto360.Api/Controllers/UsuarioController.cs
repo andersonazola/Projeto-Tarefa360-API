@@ -206,7 +206,6 @@ public class UsuarioController : ControllerBase
     {
         try
         {
-
             var tipoUsuarios = (string[])Enum.GetNames(typeof(TiposUsuarios));
             var valorUsuarios = (int[])Enum.GetValues(typeof(TiposUsuarios));
 
@@ -230,4 +229,26 @@ public class UsuarioController : ControllerBase
         }
     }
 
+    [HttpGet]
+    [Route("Busca")]
+    public async Task<ActionResult> Busca(string filtro)
+    {
+        try
+        {
+            var retornoBusca = await _usuarioAplicacao.Busca(filtro);
+            var usuariosBusca = retornoBusca.Select(usuario => new UsuarioResposta()
+            {
+                Id = usuario.ID,
+                Nome = usuario.Nome,
+                Email = usuario.Email,
+                TipoUsuario = usuario.TipoUsuario
+            }).ToList();
+
+            return Ok (usuariosBusca);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }

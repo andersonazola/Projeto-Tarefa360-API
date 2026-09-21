@@ -7,6 +7,7 @@ namespace Projeto360.Repositorio.Interfaces
         Task<int> Salvar(Projeto projeto);
         Task Atualizar(Projeto projeto);
         Task <Projeto> Obter (int projetoId);
-        Task <IEnumerable<Projeto>> Listar(bool ativo =true);
+        Task <IEnumerable<Projeto>> Listar(bool ativo = true);
+        Task<IEnumerable<Projeto>> Busca(string filtro, bool ativo = true);
     }
 }

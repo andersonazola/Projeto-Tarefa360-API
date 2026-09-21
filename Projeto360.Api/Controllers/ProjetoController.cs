@@ -96,7 +96,7 @@ namespace Projeto360.Api.Controllers
                     Id = projeto.Id,
                     Nome = projeto.Nome,
                     Descricao = projeto.Descricao
-                    
+
                 };
                 await _projetoAplicacao.Atualizar(projetoAtualizar);
                 return Ok();
@@ -115,6 +115,28 @@ namespace Projeto360.Api.Controllers
             {
                 await _projetoAplicacao.Deletar(id);
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("Busca")]
+        public async Task<ActionResult> Busca(string filtro)
+        {
+            try
+            {
+                var retornoBusca = await _projetoAplicacao.Busca(filtro);
+                var projetosBusca = retornoBusca.Select(projeto => new ProjetoReposta()
+                {
+                    Id = projeto.Id,
+                    Nome = projeto.Nome,
+                    Descricao = projeto.Descricao
+                }).ToList();
+
+                return Ok(projetosBusca);
             }
             catch (Exception ex)
             {

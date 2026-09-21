@@ -29,6 +29,7 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
     public async Task Deletar(Tarefa tarefa)
     {
         tarefa.Ativa = false;
+        tarefa.Concluida = true;
         _contexto.Tarefas.Update(tarefa);
         await _contexto.SaveChangesAsync();
     }
@@ -42,6 +43,26 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         .Include(tarefa => tarefa.Sprint)
         .Include(tarefa => tarefa.Historia)
         .ToListAsync();
+    }
+
+    public async Task<IEnumerable<Tarefa>> Busca(string filtro, bool ativo = true)
+    {
+        var resultadoBusca = _contexto.Tarefas.Where(tarefa => tarefa.Ativa == ativo);
+
+        if (!string.IsNullOrWhiteSpace(filtro))
+        {
+            var filtroLower = filtro.ToLower();
+            resultadoBusca = resultadoBusca.Where(tarefa =>
+                tarefa.Nome.ToLower().Contains(filtroLower) || tarefa.Descricao.ToLower().Contains(filtroLower)
+            );
+        }
+
+        return await resultadoBusca
+            .Include(tarefa => tarefa.Usuario)
+            .Include(tarefa => tarefa.Projeto)
+            .Include(tarefa => tarefa.Sprint)
+            .Include(tarefa => tarefa.Historia)
+            .ToListAsync();
     }
 
     public async Task<Tarefa> Obter(int tarefaId)
@@ -60,7 +81,7 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
         await _contexto.SaveChangesAsync();
     }
 
-    public async Task <int> ContarTotalTarefas (int projetoId)
+    public async Task<int> ContarTotalTarefas(int projetoId)
     {
         return await _contexto.Tarefas
             .CountAsync(t => t.ProjetoId == projetoId);
@@ -94,5 +115,13 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
     {
         return await _contexto.Tarefas
             .CountAsync(t => t.ProjetoId == projetoId && t.TipoTarefas == TiposTarefas.Bug && t.Concluida == false);
+    }
+
+    public async Task<List<Tarefa>> ObterTarefasComSprintPorProjeto(int projetoId)
+    {
+        return await _contexto.Tarefas
+            .Include(t => t.Sprint)
+            .Where(t => t.ProjetoId == projetoId && t.Ativa)
+            .ToListAsync();
     }
 }

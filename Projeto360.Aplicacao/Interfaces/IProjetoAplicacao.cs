@@ -14,5 +14,6 @@ namespace Projeto360.Aplicacao.Interfaces
         Task Deletar (int projetoId);
         Task<Projeto> Obter(int projetoId);
         Task<IEnumerable<Projeto>> Listar (bool ativo = true);
+        Task<IEnumerable<Projeto>> Busca(string filtro, bool ativo = true);
     }
 }
