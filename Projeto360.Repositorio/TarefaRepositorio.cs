@@ -47,7 +47,7 @@ public class TarefaRepositorio : BaseRepositorio, ITarefaRepositorio
 
     public async Task<IEnumerable<Tarefa>> Busca(string filtro, bool ativo = true)
     {
-        var resultadoBusca = _contexto.Tarefas.Where(tarefa => tarefa.Ativa == ativo);
+        var resultadoBusca =  _contexto.Tarefas.Where(tarefa => tarefa.Ativa == ativo && !tarefa.Concluida);
 
         if (!string.IsNullOrWhiteSpace(filtro))
         {

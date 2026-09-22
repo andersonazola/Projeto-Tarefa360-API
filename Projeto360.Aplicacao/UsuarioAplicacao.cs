@@ -144,9 +144,20 @@ public class UsuarioAplicacao : IUsuarioAplicacao
         return await _usuarioRepositorio.Listar(ativo);
     }
 
-    public async Task<IEnumerable<Usuario>> Busca(string filtro, bool ativo = true)
+    public async Task<IEnumerable<Usuario>> Busca(string filtro, int usuarioId, bool ativo = true)
     {
+        await ValidarPermissaoAdmin(usuarioId);
         return await _usuarioRepositorio.Busca(filtro, ativo);
+    }
+
+
+    public async Task<IEnumerable<Usuario>> ListarDropUsuarios(int usuarioLoginId)
+    {
+        var usuarioLogin = await _usuarioRepositorio.Obter(usuarioLoginId);
+        if (usuarioLogin == null)
+            throw new ArgumentException("Usuario não encontrado");
+
+        return await _usuarioRepositorio.Listar(true);
     }
 
     #region  Util

@@ -231,11 +231,11 @@ public class UsuarioController : ControllerBase
 
     [HttpGet]
     [Route("Busca")]
-    public async Task<ActionResult> Busca(string filtro)
+    public async Task<ActionResult> Busca(string filtro, [FromHeader(Name = "Usuario-Id")] int usuarioId)
     {
         try
         {
-            var retornoBusca = await _usuarioAplicacao.Busca(filtro);
+            var retornoBusca = await _usuarioAplicacao.Busca(filtro, usuarioId);
             var usuariosBusca = retornoBusca.Select(usuario => new UsuarioResposta()
             {
                 Id = usuario.ID,
@@ -244,7 +244,23 @@ public class UsuarioController : ControllerBase
                 TipoUsuario = usuario.TipoUsuario
             }).ToList();
 
-            return Ok (usuariosBusca);
+            return Ok(usuariosBusca);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
+
+    [HttpGet]
+    [Route("ListarDropUsuarios")]
+    public async Task<ActionResult> ListarDropUsuarios([FromHeader(Name = "Usuario-Id")] int usuarioLoginId)
+    {
+        try
+        {
+            var usuarios = await _usuarioAplicacao.ListarDropUsuarios(usuarioLoginId);
+            var resposta = usuarios.Select(u => new { id = u.ID, nome = u.Nome }).ToList();
+            return Ok(resposta);
         }
         catch (Exception ex)
         {
