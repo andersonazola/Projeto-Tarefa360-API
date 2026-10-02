@@ -1,7 +1,7 @@
 using Projeto360.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAccess.Repositorio;
+namespace Projeto360.Repositorio;
 
 public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
 {
@@ -12,8 +12,8 @@ public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
 
     public async Task<int> Salvar(Usuario usuario)
     {
-        await _contexto.Usuarios.AddAsync(usuario);
-        await _contexto.SaveChangesAsync();
+        _contexto.Usuarios.Add(usuario);
+        _contexto.SaveChanges();
         return usuario.ID;
     }
 
@@ -47,5 +47,18 @@ public class UsuarioRepositorio : BaseRepositorio, IUsuarioRepositorio
         return await _contexto.Usuarios.Where(U => U.Ativo == ativo).ToListAsync();
     }
 
+    public async Task<IEnumerable<Usuario>> Busca(string filtro, bool ativo = true)
+    {
+        var resultadoBusca = _contexto.Usuarios.Where(usuario => usuario.Ativo == ativo);
 
+        if (!string.IsNullOrWhiteSpace(filtro))
+        {
+            var filtroLower = filtro.ToLower();
+            resultadoBusca = resultadoBusca.Where(usuario =>
+                usuario.Nome.ToLower().Contains(filtroLower) || usuario.Email.ToLower().Contains(filtroLower)
+            );
+        }
+
+        return await resultadoBusca.ToListAsync();
+    }
 }

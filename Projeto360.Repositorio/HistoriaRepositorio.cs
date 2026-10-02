@@ -1,0 +1,84 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Projeto360.Dominio.Entidades;
+using Projeto360.Dominio.Enumeradores;
+using Projeto360.Entidades;
+using Projeto360.Repositorio.Interfaces;
+
+namespace Projeto360.Repositorio
+{
+    public class HistoriaRepositorio : BaseRepositorio, IHistoriaRepositorio
+    {
+        public HistoriaRepositorio(Projeto360Contexto contexto) : base(contexto)
+        {
+
+        }
+
+        public async Task<int> Salvar(Historia historia)
+        {
+            await _contexto.Historias.AddAsync(historia);
+            await _contexto.SaveChangesAsync();
+            return historia.Id;
+        }
+
+        public async Task Atualizar(Historia historia)
+        {
+            _contexto.Historias.Update(historia);
+            await _contexto.SaveChangesAsync();
+        }
+
+        public async Task<Historia> Obter(int historiaId)
+        {
+            return await _contexto.Historias
+            .Include(historia => historia.Projeto)
+            .FirstOrDefaultAsync(historia => historia.Id == historiaId && historia.Ativo);
+        }
+
+        public async Task Deletar(Historia historia)
+        {
+            historia.Ativo = false;
+            _contexto.Historias.Update(historia);
+            await _contexto.SaveChangesAsync();
+        }
+        public async Task<IEnumerable<Historia>> Listar(bool ativo)
+        {
+            return await _contexto.Historias
+                .Where(historia => historia.Ativo == ativo)
+                .Include(historia => historia.Projeto)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Historia>> Busca(string filtro, bool ativo = true)
+        {
+            var resultadoBusca = _contexto.Historias.Where(historia => historia.Ativo == ativo);
+
+            if (!string.IsNullOrWhiteSpace(filtro))
+            {
+                var filtroLower = filtro.ToLower();
+                resultadoBusca = resultadoBusca.Where(historia =>
+                    historia.Nome.ToLower().Contains(filtroLower) || historia.Descricao.ToLower().Contains(filtroLower)
+                    || historia.Projeto.Nome.ToLower().Contains(filtroLower)
+                );
+            }
+
+           return await resultadoBusca.Include(historia => historia.Projeto).ToListAsync();
+        }
+
+        //Conta todas as histórias ativas de um projeto
+        public async Task <int> ContarTotalHistorias(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo);
+        }
+
+        //Conta histórias que estão marcadas como completas
+        public async Task <int> ContarHistoriasFechadas(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo && h.Status == StatusHistoria.Concluida);
+        }
+
+        public async Task<int> ContarHistoriasAbertas(int projetoId)
+        {
+            return _contexto.Historias.Count(h => h.ProjetoId == projetoId && h.Ativo && h.Status == StatusHistoria.Aberta);
+        }
+    }
+}
